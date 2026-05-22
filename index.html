@@ -3,497 +3,1228 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <meta name="description" content="Juicy Vibe - Fresh, Natural & Organic Juices. Taste the freshness in every sip!" />
-  <meta name="keywords" content="juice shop, fresh juice, organic smoothies, healthy drinks, Juicy Vibe, Haryana" />
-  <meta name="author" content="Samiksha Dandyan" />
-  <title>Juicy Vibe 🍊 Fresh Juice, Fresh Mood!</title>
+  <meta name="description" content="Juicy Vibe — cold-pressed juices and smoothies made fresh daily in Pehowa, Haryana. Pure fruit, no shortcuts." />
+  <title>Juicy Vibe — Cold-Pressed, Fresh Daily</title>
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Pacifico&family=Poppins:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet" />
-  <link rel="stylesheet" href="style.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,700;0,9..144,900;1,9..144,400;1,9..144,700;1,9..144,900&family=DM+Sans:wght@400;500;600&display=swap" rel="stylesheet" />
+  <style>
+    /* ─── TOKENS ─────────────────────────────────────── */
+    :root {
+      --cream:      #fdfaf4;
+      --surface:    #fff9ee;
+      --citrus:     #f97316;
+      --citrus-dk:  #c2410c;
+      --citrus-lt:  #fed7aa;
+      --berry:      #db2777;
+      --berry-lt:   #fce7f3;
+      --leaf:       #16a34a;
+      --leaf-lt:    #dcfce7;
+      --ink:        #1c1917;
+      --ink-soft:   #44403c;
+      --muted:      #78716c;
+      --border:     #e7e0d5;
+      --header-h:   60px;
+      --max-w:      1100px;
+      --ease-out:   cubic-bezier(0.16, 1, 0.3, 1);
+      --font-d:     'Fraunces', Georgia, serif;
+      --font-b:     'DM Sans', sans-serif;
+    }
+
+    /* ─── RESET ──────────────────────────────────────── */
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    html { scroll-behavior: smooth; font-size: 16px; }
+    body {
+      font-family: var(--font-b);
+      background: var(--cream);
+      color: var(--ink);
+      overflow-x: hidden;
+      line-height: 1.6;
+    }
+    img { display: block; max-width: 100%; }
+    a { color: inherit; text-decoration: none; }
+    button { font-family: var(--font-b); cursor: pointer; border: none; background: none; }
+    ul { list-style: none; }
+
+    /* ─── GRAIN OVERLAY ──────────────────────────────── */
+    body::after {
+      content: '';
+      position: fixed;
+      inset: 0;
+      pointer-events: none;
+      z-index: 9999;
+      opacity: 0.038;
+      background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='200' height='200'%3E%3Cfilter id='g'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.75' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='200' height='200' filter='url(%23g)'/%3E%3C/svg%3E");
+      background-size: 200px 200px;
+    }
+
+    /* ─── CONTAINER ──────────────────────────────────── */
+    .container {
+      max-width: var(--max-w);
+      margin: 0 auto;
+      padding: 0 clamp(1.25rem, 5vw, 2.5rem);
+    }
+
+    /* ─── TYPOGRAPHY ─────────────────────────────────── */
+    .overline {
+      display: block;
+      font-family: var(--font-b);
+      font-size: 0.72rem;
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: 0.14em;
+      color: var(--citrus);
+      margin-bottom: 0.6rem;
+    }
+    h1, h2, h3 { font-family: var(--font-d); font-weight: 900; line-height: 1.08; }
+    h1 { font-size: clamp(2.8rem, 7vw, 5.2rem); }
+    h2 { font-size: clamp(2rem, 5vw, 3.2rem); }
+    h3 { font-size: 1.2rem; font-weight: 700; }
+    p  { color: var(--muted); line-height: 1.75; }
+
+    /* ─── BUTTONS ────────────────────────────────────── */
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.4rem;
+      padding: 0.75rem 1.6rem;
+      border-radius: 9999px;
+      font-family: var(--font-b);
+      font-size: 0.92rem;
+      font-weight: 600;
+      transition: transform 0.2s var(--ease-out), box-shadow 0.2s var(--ease-out), background 0.2s;
+      cursor: pointer;
+    }
+    .btn:focus-visible {
+      outline: 3px solid var(--citrus);
+      outline-offset: 3px;
+    }
+    .btn-primary {
+      background: var(--citrus);
+      color: #fff;
+      box-shadow: 0 4px 20px rgba(249,115,22,0.35);
+    }
+    .btn-primary:hover {
+      background: var(--citrus-dk);
+      transform: translateY(-2px);
+      box-shadow: 0 8px 28px rgba(249,115,22,0.45);
+    }
+    .btn-outline {
+      background: transparent;
+      color: var(--ink);
+      border: 1.5px solid var(--border);
+    }
+    .btn-outline:hover {
+      border-color: var(--citrus);
+      color: var(--citrus);
+      transform: translateY(-2px);
+    }
+
+    /* ─── HEADER ─────────────────────────────────────── */
+    .header {
+      position: fixed;
+      top: 0; left: 0; right: 0;
+      z-index: 200;
+      height: var(--header-h);
+      display: flex;
+      align-items: center;
+      padding: 0 clamp(1.25rem, 5vw, 2.5rem);
+      background: rgba(253,250,244,0.88);
+      backdrop-filter: blur(18px);
+      -webkit-backdrop-filter: blur(18px);
+      border-bottom: 1px solid transparent;
+      transition: border-color 0.3s, box-shadow 0.3s;
+    }
+    .header.scrolled {
+      border-bottom-color: var(--border);
+      box-shadow: 0 2px 20px rgba(28,25,23,0.07);
+    }
+    .header-inner {
+      max-width: var(--max-w);
+      width: 100%;
+      margin: 0 auto;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 1rem;
+    }
+    .logo {
+      font-family: var(--font-d);
+      font-style: italic;
+      font-size: 1.45rem;
+      font-weight: 900;
+      color: var(--ink);
+      display: flex;
+      align-items: center;
+      gap: 0.3rem;
+      flex-shrink: 0;
+    }
+    .logo-dot {
+      display: inline-block;
+      width: 9px; height: 9px;
+      border-radius: 50%;
+      background: var(--citrus);
+      flex-shrink: 0;
+      margin-bottom: -2px;
+    }
+    .nav-links {
+      display: flex;
+      align-items: center;
+      gap: 2rem;
+    }
+    .nav-links a {
+      font-size: 0.88rem;
+      font-weight: 500;
+      color: var(--ink-soft);
+      position: relative;
+      padding-bottom: 2px;
+      transition: color 0.2s;
+    }
+    .nav-links a::after {
+      content: '';
+      position: absolute;
+      bottom: 0; left: 0;
+      width: 0; height: 1.5px;
+      background: var(--citrus);
+      transition: width 0.25s var(--ease-out);
+    }
+    .nav-links a:hover { color: var(--citrus); }
+    .nav-links a:hover::after { width: 100%; }
+    .nav-toggle {
+      display: none;
+      flex-direction: column;
+      gap: 5px;
+      padding: 4px;
+      background: none;
+      border: none;
+      cursor: pointer;
+    }
+    .nav-toggle span {
+      display: block;
+      width: 22px; height: 2px;
+      background: var(--ink);
+      border-radius: 2px;
+      transition: var(--transition);
+    }
+
+    /* ─── HERO ───────────────────────────────────────── */
+    .hero {
+      min-height: 100vh;
+      padding-top: var(--header-h);
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      align-items: center;
+      gap: 2rem;
+      position: relative;
+      overflow: hidden;
+    }
+    .hero-content {
+      padding: clamp(3rem, 8vw, 6rem) 0 clamp(3rem, 8vw, 6rem) clamp(1.25rem, 5vw, 2.5rem);
+      position: relative;
+      z-index: 2;
+    }
+    .hero h1 {
+      margin-bottom: 1.25rem;
+      letter-spacing: -0.02em;
+    }
+    .hero h1 em {
+      font-style: italic;
+      color: var(--citrus);
+    }
+    .hero-promise {
+      font-size: 1.05rem;
+      margin-bottom: 2.2rem;
+      max-width: 440px;
+      color: var(--muted);
+    }
+    .hero-ctas {
+      display: flex;
+      gap: 0.75rem;
+      flex-wrap: wrap;
+    }
+    .hero-visual {
+      position: relative;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      min-height: 540px;
+      padding-right: clamp(1.25rem, 5vw, 2.5rem);
+    }
+
+    /* ─── GLASS ILLUSTRATION ─────────────────────────── */
+    .glass-scene {
+      position: relative;
+      width: 220px;
+      height: 360px;
+      z-index: 2;
+      animation: heroFloat 5s ease-in-out infinite;
+    }
+    @keyframes heroFloat {
+      0%,100% { transform: translateY(0) rotate(-1deg); }
+      50%      { transform: translateY(-16px) rotate(1deg); }
+    }
+    .glass {
+      position: absolute;
+      bottom: 0; left: 50%;
+      transform: translateX(-50%);
+      width: 110px;
+      height: 250px;
+      border-radius: 8px 8px 22px 22px;
+      background: linear-gradient(
+        160deg,
+        rgba(255,255,255,0.45) 0%,
+        rgba(255,255,255,0.08) 40%,
+        rgba(255,255,255,0.18) 100%
+      );
+      border: 1.5px solid rgba(255,255,255,0.65);
+      overflow: hidden;
+      box-shadow:
+        inset 6px 0 16px rgba(255,255,255,0.18),
+        inset -3px 0 10px rgba(255,255,255,0.06),
+        0 24px 60px rgba(249,115,22,0.28);
+    }
+    .glass-liquid {
+      position: absolute;
+      bottom: 0; left: 0; right: 0;
+      height: 78%;
+      background: linear-gradient(
+        180deg,
+        rgba(253,186,116,0.92) 0%,
+        rgba(249,115,22,0.97) 45%,
+        rgba(194,65,12,1)     100%
+      );
+      border-radius: 0 0 20px 20px;
+      animation: liquidMove 4s ease-in-out infinite;
+    }
+    @keyframes liquidMove {
+      0%,100% { transform: scaleX(1); }
+      50%      { transform: scaleX(1.015) translateX(-2px); }
+    }
+    .glass-shine {
+      position: absolute;
+      top: 12px; left: 10px;
+      width: 14px;
+      height: 55%;
+      background: linear-gradient(180deg, rgba(255,255,255,0.55) 0%, rgba(255,255,255,0.05) 100%);
+      border-radius: 9999px;
+    }
+    .glass-ice {
+      position: absolute;
+      background: rgba(255,255,255,0.55);
+      border-radius: 4px;
+      border: 1px solid rgba(255,255,255,0.8);
+    }
+    .ice-1 { width:28px; height:20px; top:28%; left:18%;  transform:rotate(-12deg); }
+    .ice-2 { width:22px; height:18px; top:22%; right:14%; transform:rotate(16deg);  }
+    .ice-3 { width:20px; height:16px; top:38%; left:38%;  transform:rotate(-6deg);  }
+    .glass-straw {
+      position: absolute;
+      top: -65px;
+      right: 26px;
+      width: 7px;
+      height: 190px;
+      background: linear-gradient(to right, rgba(255,255,255,0.85), rgba(255,255,255,0.4));
+      border-radius: 9999px;
+      transform: rotate(5deg);
+      transform-origin: bottom center;
+      z-index: 3;
+    }
+
+    /* ─── FRUIT ORBS ─────────────────────────────────── */
+    .orb {
+      position: absolute;
+      border-radius: 50%;
+      pointer-events: none;
+    }
+    .orb-mango  { width:72px; height:72px; background:radial-gradient(circle at 38% 34%, #fde68a, #f59e0b); top:-10px;  left:-20px; animation:floatA 5s ease-in-out infinite; }
+    .orb-citrus { width:58px; height:58px; background:radial-gradient(circle at 38% 34%, #fed7aa, #f97316); top:40px;  right:-24px; animation:floatB 6s ease-in-out infinite 0.8s; }
+    .orb-kiwi   { width:52px; height:52px; background:radial-gradient(circle at 38% 34%, #bbf7d0, #16a34a); bottom:120px; left:-30px; animation:floatC 4.5s ease-in-out infinite 1.5s; }
+    .orb-berry  { width:64px; height:64px; background:radial-gradient(circle at 38% 34%, #fda4af, #db2777); bottom:70px;  right:-18px; animation:floatA 6.5s ease-in-out infinite 0.4s; }
+    .orb-pine   { width:44px; height:44px; background:radial-gradient(circle at 38% 34%, #fef08a, #d97706); bottom:200px; right:14px;  animation:floatB 5.5s ease-in-out infinite 2s; }
+    @keyframes floatA { 0%,100%{transform:translateY(0) rotate(0deg)}   50%{transform:translateY(-14px) rotate(8deg)}  }
+    @keyframes floatB { 0%,100%{transform:translateY(0) rotate(0deg)}   50%{transform:translateY(-20px) rotate(-10deg)} }
+    @keyframes floatC { 0%,100%{transform:translateY(0) rotate(0deg)}   50%{transform:translateY(-10px) rotate(5deg)}  }
+
+    /* ─── PARALLAX BLOBS ─────────────────────────────── */
+    .blobs {
+      position: absolute;
+      inset: 0;
+      pointer-events: none;
+      overflow: hidden;
+      z-index: 0;
+    }
+    .blob {
+      position: absolute;
+      border-radius: 50%;
+      filter: blur(72px);
+    }
+    .blob-1 { width:480px; height:480px; background:rgba(249,115,22,0.20); top:-80px; right:-60px; }
+    .blob-2 { width:360px; height:360px; background:rgba(219,39,119,0.14); bottom:-40px; left:-60px; }
+    .blob-3 { width:280px; height:280px; background:rgba(22,163,74,0.10); top:40%; left:35%; }
+
+    /* ─── WHY SECTION ────────────────────────────────── */
+    .why {
+      padding: clamp(4rem, 9vw, 7rem) 0;
+      background: var(--cream);
+      position: relative;
+    }
+    .why-header { text-align: center; margin-bottom: 3.5rem; }
+    .why-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 1.5rem;
+    }
+    .why-card {
+      padding: 2.2rem 1.8rem;
+      background: var(--surface);
+      border-radius: 20px;
+      border: 1px solid var(--border);
+      transition: transform 0.3s var(--ease-out), box-shadow 0.3s;
+    }
+    .why-card:hover {
+      transform: translateY(-6px);
+      box-shadow: 0 16px 40px rgba(28,25,23,0.1);
+    }
+    .why-icon {
+      width: 52px; height: 52px;
+      background: var(--leaf-lt);
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 1.4rem;
+      margin-bottom: 1.1rem;
+    }
+    .why-card h3 {
+      font-size: 1.15rem;
+      margin-bottom: 0.5rem;
+      color: var(--ink);
+    }
+    .why-card p { font-size: 0.9rem; }
+
+    /* ─── MENU SECTION ───────────────────────────────── */
+    .menu {
+      padding: clamp(4rem, 9vw, 7rem) 0;
+      background: var(--surface);
+    }
+    .menu-header { text-align: center; margin-bottom: 2.5rem; }
+    .menu-tabs {
+      display: flex;
+      justify-content: center;
+      gap: 0.5rem;
+      margin-bottom: 2.8rem;
+      flex-wrap: wrap;
+    }
+    .tab-btn {
+      padding: 0.55rem 1.4rem;
+      border-radius: 9999px;
+      font-size: 0.88rem;
+      font-weight: 600;
+      color: var(--muted);
+      background: var(--cream);
+      border: 1.5px solid var(--border);
+      transition: all 0.2s;
+    }
+    .tab-btn:hover { border-color: var(--citrus); color: var(--citrus); }
+    .tab-btn.active {
+      background: var(--citrus);
+      border-color: var(--citrus);
+      color: #fff;
+    }
+    .tab-btn:focus-visible { outline: 3px solid var(--citrus); outline-offset: 3px; }
+    .menu-group { display: none; }
+    .menu-group.active { display: block; }
+    .menu-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 1.25rem;
+    }
+    .menu-card {
+      background: var(--cream);
+      border-radius: 18px;
+      border: 1px solid var(--border);
+      overflow: hidden;
+      transition: transform 0.3s var(--ease-out), box-shadow 0.3s, border-color 0.2s;
+      position: relative;
+    }
+    .menu-card::before {
+      content: '';
+      position: absolute;
+      top: 0; left: 0; right: 0;
+      height: 3px;
+      background: var(--citrus);
+      transform: scaleX(0);
+      transition: transform 0.3s var(--ease-out);
+    }
+    .menu-card:hover {
+      transform: translateY(-8px);
+      box-shadow: 0 16px 40px rgba(28,25,23,0.12);
+      border-color: transparent;
+    }
+    .menu-card:hover::before { transform: scaleX(1); }
+    .card-img {
+      height: 148px;
+      position: relative;
+      overflow: hidden;
+    }
+    .card-img-label {
+      position: absolute;
+      bottom: 8px;
+      left: 10px;
+      font-size: 0.62rem;
+      font-family: var(--font-b);
+      color: rgba(255,255,255,0.72);
+      font-style: italic;
+      letter-spacing: 0.02em;
+    }
+    /* Shine sweep on card hover */
+    .card-img::after {
+      content: '';
+      position: absolute;
+      top: 0; left: -80%;
+      width: 60%; height: 100%;
+      background: linear-gradient(90deg, transparent, rgba(255,255,255,0.18), transparent);
+      transition: left 0.45s var(--ease-out);
+    }
+    .menu-card:hover .card-img::after { left: 130%; }
+    .card-body {
+      padding: 1.1rem 1.2rem 1.3rem;
+    }
+    .card-body h3 {
+      font-size: 1.05rem;
+      font-weight: 700;
+      margin-bottom: 0.3rem;
+      color: var(--ink);
+    }
+    .card-ingredients {
+      font-size: 0.78rem;
+      color: var(--muted);
+      line-height: 1.5;
+      margin-bottom: 0.8rem;
+      font-style: italic;
+    }
+    .card-footer-row {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+    .card-price {
+      font-family: var(--font-d);
+      font-size: 1.22rem;
+      font-weight: 700;
+      color: var(--citrus);
+    }
+    .card-order {
+      font-size: 0.75rem;
+      font-weight: 600;
+      color: var(--citrus);
+      padding: 0.35rem 0.9rem;
+      border-radius: 9999px;
+      border: 1.5px solid var(--citrus-lt);
+      transition: all 0.2s;
+      background: transparent;
+    }
+    .card-order:hover {
+      background: var(--citrus);
+      color: #fff;
+      border-color: var(--citrus);
+    }
+    .card-order:focus-visible { outline: 3px solid var(--citrus); outline-offset: 2px; }
+
+    /* Boosters: smaller 3-col layout */
+    .menu-group[data-group="boosters"] .menu-grid {
+      grid-template-columns: repeat(3, 1fr);
+      max-width: 700px;
+      margin: 0 auto;
+    }
+    .menu-group[data-group="boosters"] .card-img { height: 110px; }
+
+    /* ─── STORY STRIP ────────────────────────────────── */
+    .story {
+      background: #f5ede0;
+      padding: clamp(4rem, 9vw, 7rem) 0;
+      position: relative;
+      clip-path: polygon(0 4%, 100% 0%, 100% 96%, 0% 100%);
+      margin: -2.5rem 0;
+      z-index: 1;
+    }
+    .story-inner {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 4rem;
+      align-items: center;
+    }
+    .story-text .overline { color: var(--leaf); }
+    .story-text h2 { margin-bottom: 1rem; }
+    .story-text p { max-width: 440px; }
+    .fruit-row {
+      display: flex;
+      gap: 1rem;
+      flex-wrap: wrap;
+      justify-content: center;
+    }
+    .fruit-pill {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 0.4rem;
+    }
+    .fruit-pill-orb {
+      width: 64px; height: 64px;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 1.75rem;
+      box-shadow: 0 6px 20px rgba(28,25,23,0.1);
+      transition: transform 0.25s var(--ease-out);
+    }
+    .fruit-pill:hover .fruit-pill-orb { transform: scale(1.12) translateY(-3px); }
+    .fruit-pill span {
+      font-size: 0.72rem;
+      font-weight: 600;
+      color: var(--ink-soft);
+      text-transform: uppercase;
+      letter-spacing: 0.1em;
+    }
+
+    /* ─── VISIT SECTION ──────────────────────────────── */
+    .visit {
+      padding: clamp(4rem, 9vw, 7rem) 0 clamp(3rem, 6vw, 5rem);
+      position: relative;
+      z-index: 2;
+      background: var(--cream);
+    }
+    .visit-inner {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 4rem;
+      align-items: start;
+      margin-bottom: clamp(3rem, 6vw, 5rem);
+    }
+    .visit-info h2 { margin-bottom: 1.5rem; }
+    .hours-list {
+      list-style: none;
+      margin-bottom: 2rem;
+    }
+    .hours-list li {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 0.7rem 0;
+      border-bottom: 1px solid var(--border);
+      font-size: 0.92rem;
+    }
+    .hours-list li:last-child { border-bottom: none; }
+    .hours-day { color: var(--ink-soft); font-weight: 500; }
+    .hours-time { color: var(--citrus); font-weight: 600; }
+    .visit-contacts { display: flex; flex-direction: column; gap: 0.6rem; }
+    .contact-line {
+      display: flex;
+      align-items: center;
+      gap: 0.6rem;
+      font-size: 0.9rem;
+      color: var(--ink-soft);
+    }
+    .contact-line strong { color: var(--ink); font-weight: 600; }
+    .contact-line a { color: var(--citrus); transition: color 0.2s; }
+    .contact-line a:hover { color: var(--citrus-dk); }
+
+    .visit-cta-box {
+      background: linear-gradient(135deg, rgba(249,115,22,0.08) 0%, rgba(219,39,119,0.05) 100%);
+      border: 1px solid rgba(249,115,22,0.18);
+      border-radius: 24px;
+      padding: 2.5rem 2rem;
+      display: flex;
+      flex-direction: column;
+      gap: 1rem;
+      align-items: flex-start;
+    }
+    .visit-cta-box h3 {
+      font-size: 1.6rem;
+      font-style: italic;
+    }
+    .visit-cta-box p { font-size: 0.9rem; }
+    .visit-btns { display: flex; gap: 0.75rem; flex-wrap: wrap; }
+
+    .final-cta {
+      text-align: center;
+      padding: clamp(2.5rem, 5vw, 4rem);
+      background: var(--ink);
+      border-radius: 28px;
+      color: #fff;
+    }
+    .final-cta h2 {
+      font-size: clamp(1.8rem, 4vw, 2.8rem);
+      color: #fff;
+      margin-bottom: 0.75rem;
+    }
+    .final-cta h2 em { color: var(--citrus); font-style: italic; }
+    .final-cta p { color: rgba(255,255,255,0.65); margin-bottom: 1.6rem; font-size: 1rem; }
+    .final-cta .btn-primary { background: var(--citrus); font-size: 1rem; padding: 0.85rem 2rem; }
+
+    /* ─── FOOTER ─────────────────────────────────────── */
+    .footer {
+      padding: 2.5rem 0;
+      border-top: 1px solid var(--border);
+      margin-top: 4rem;
+    }
+    .footer-inner {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      gap: 1.2rem;
+    }
+    .footer-logo {
+      font-family: var(--font-d);
+      font-style: italic;
+      font-size: 1.25rem;
+      font-weight: 700;
+    }
+    .footer-copy { font-size: 0.8rem; color: var(--muted); }
+    .socials { display: flex; gap: 0.75rem; }
+    .social-btn {
+      width: 36px; height: 36px;
+      border-radius: 50%;
+      border: 1.5px solid var(--border);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 0.78rem;
+      font-weight: 700;
+      color: var(--muted);
+      transition: all 0.2s;
+    }
+    .social-btn:hover {
+      border-color: var(--citrus);
+      color: var(--citrus);
+      transform: translateY(-2px);
+    }
+    .social-btn:focus-visible { outline: 3px solid var(--citrus); outline-offset: 3px; }
+
+    /* ─── SCROLL REVEAL ──────────────────────────────── */
+    [data-reveal] {
+      opacity: 0;
+      transform: translateY(28px);
+      transition:
+        opacity  0.65s var(--ease-out) var(--delay, 0ms),
+        transform 0.65s var(--ease-out) var(--delay, 0ms);
+    }
+    [data-reveal].is-visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    /* ─── RESPONSIVE ─────────────────────────────────── */
+    @media (max-width: 1024px) {
+      .menu-grid { grid-template-columns: repeat(3, 1fr); }
+      .menu-group[data-group="boosters"] .menu-grid { grid-template-columns: repeat(3, 1fr); }
+    }
+    @media (max-width: 860px) {
+      .hero { grid-template-columns: 1fr; min-height: auto; padding-top: calc(var(--header-h) + 1rem); }
+      .hero-visual { min-height: 300px; }
+      .hero-content { padding-top: 3rem; padding-bottom: 0; text-align: center; }
+      .hero-ctas { justify-content: center; }
+      .why-grid { grid-template-columns: 1fr; }
+      .menu-grid { grid-template-columns: repeat(2, 1fr); }
+      .story-inner { grid-template-columns: 1fr; gap: 2.5rem; }
+      .visit-inner { grid-template-columns: 1fr; gap: 2rem; }
+      .nav-links { display: none; }
+      .nav-links.open {
+        display: flex;
+        flex-direction: column;
+        position: absolute;
+        top: var(--header-h);
+        left: 0; right: 0;
+        background: var(--cream);
+        padding: 1.25rem 1.5rem;
+        border-bottom: 1px solid var(--border);
+        box-shadow: 0 8px 20px rgba(28,25,23,0.08);
+        gap: 0.25rem;
+      }
+      .nav-links.open a { padding: 0.7rem 0; font-size: 1rem; }
+      .nav-toggle { display: flex; }
+      .header-inner .btn { display: none; }
+    }
+    @media (max-width: 560px) {
+      .menu-grid { grid-template-columns: 1fr; }
+      .menu-group[data-group="boosters"] .menu-grid { grid-template-columns: 1fr; }
+      .fruit-row { gap: 0.75rem; }
+      .fruit-pill-orb { width: 52px; height: 52px; font-size: 1.4rem; }
+      .footer-inner { flex-direction: column; align-items: flex-start; }
+    }
+
+    /* ─── REDUCED MOTION ─────────────────────────────── */
+    @media (prefers-reduced-motion: reduce) {
+      *, *::before, *::after {
+        animation-duration: 0.01ms !important;
+        transition-duration: 0.01ms !important;
+      }
+      [data-reveal] { opacity: 1; transform: none; }
+    }
+  </style>
 </head>
 <body>
 
-  <!-- ========== NAVBAR ========== -->
-  <header class="navbar">
-    <div class="nav-container">
-      <div class="logo">🍊 Juicy Vibe</div>
-      <input type="checkbox" id="nav-toggle" class="nav-toggle" />
-      <label for="nav-toggle" class="hamburger" aria-label="Menu">
-        <span></span>
-        <span></span>
-        <span></span>
-      </label>
-      <nav class="nav-menu">
-        <a href="#home">Home</a>
-        <a href="#about">About</a>
+  <!-- ════════════ HEADER ════════════ -->
+  <header class="header" id="site-header" role="banner">
+    <div class="header-inner">
+      <a href="#hero" class="logo" aria-label="Juicy Vibe — home">
+        Juicy Vibe<span class="logo-dot" aria-hidden="true"></span>
+      </a>
+      <button class="nav-toggle" id="nav-toggle" aria-label="Toggle navigation" aria-expanded="false" aria-controls="nav-links">
+        <span></span><span></span><span></span>
+      </button>
+      <nav id="nav-links" class="nav-links" role="navigation" aria-label="Main">
         <a href="#menu">Menu</a>
-        <a href="#mascots">Fun Zone</a>
-        <a href="#gallery">Gallery</a>
-        <a href="#reviews">Reviews</a>
-        <a href="#contact">Contact</a>
+        <a href="#story">About</a>
+        <a href="#visit">Visit</a>
       </nav>
+      <a href="#visit" class="btn btn-primary" style="font-size:0.85rem;padding:0.6rem 1.3rem">Order Now</a>
     </div>
   </header>
 
   <main>
 
-    <!-- ========== HERO SECTION ========== -->
-    <section class="hero" id="home">
-      <div class="floating-fruits" aria-hidden="true">
-        <span class="fruit f1">🍊</span>
-        <span class="fruit f2">🥭</span>
-        <span class="fruit f3">🍓</span>
-        <span class="fruit f4">🍍</span>
-        <span class="fruit f5">🍉</span>
-        <span class="fruit f6">🥝</span>
-        <span class="fruit f7">🍋</span>
-        <span class="fruit f8">🍇</span>
-        <span class="fruit f9">🍑</span>
-        <span class="fruit f10">🫐</span>
-        <span class="fruit f11">🍒</span>
-        <span class="fruit f12">🌴</span>
+    <!-- ════════════ HERO ════════════ -->
+    <section class="hero" id="hero" aria-labelledby="hero-heading">
+      <!-- Parallax blobs -->
+      <div class="blobs" aria-hidden="true">
+        <div class="blob blob-1" data-speed="0.35"></div>
+        <div class="blob blob-2" data-speed="0.55"></div>
+        <div class="blob blob-3" data-speed="0.20"></div>
       </div>
 
-      <div class="hero-content">
-        <span class="hero-badge">🌿 100% Natural &amp; Organic</span>
-        <h1 class="hero-title">Fresh Juice,<br /><span class="gradient-text">Fresh Mood!</span></h1>
-        <p class="hero-subtitle">
-          Experience the burst of nature in every sip. Handcrafted with love
-          from the freshest fruits — your daily dose of health and happiness!
-        </p>
-        <div class="hero-buttons">
-          <a href="#menu" class="btn btn-primary">🛒 Order Now</a>
-          <a href="#menu" class="btn btn-secondary">🍹 Explore Menu</a>
-        </div>
-        <div class="hero-stats">
-          <div class="stat"><strong>500+</strong><span>Happy Customers</span></div>
-          <div class="stat"><strong>20+</strong><span>Fresh Flavors</span></div>
-          <div class="stat"><strong>100%</strong><span>Natural</span></div>
+      <div class="hero-content" data-reveal>
+        <span class="overline">Fresh daily · Pehowa, Haryana</span>
+        <h1 id="hero-heading">Cold-Pressed.<br><em>Crave-Worthy.</em></h1>
+        <p class="hero-promise">Pure fruit, pressed fresh every morning. No concentrates, no added sugar, no shortcuts — just nature at its most delicious.</p>
+        <div class="hero-ctas">
+          <a href="#menu" class="btn btn-primary">Explore Menu</a>
+          <a href="#visit" class="btn btn-outline">Visit Us</a>
         </div>
       </div>
 
       <div class="hero-visual" aria-hidden="true">
-        <div class="glow-ring"></div>
-        <div class="juice-glass">
-          <div class="glass-body">
-            <div class="liquid"></div>
-            <div class="bubbles">
-              <span></span><span></span><span></span><span></span>
-            </div>
+        <div class="glass-scene">
+          <!-- Fruit orbs -->
+          <div class="orb orb-mango"  data-speed="0.18"></div>
+          <div class="orb orb-citrus" data-speed="0.28"></div>
+          <div class="orb orb-kiwi"   data-speed="0.14"></div>
+          <div class="orb orb-berry"  data-speed="0.22"></div>
+          <div class="orb orb-pine"   data-speed="0.30"></div>
+          <!-- Glass -->
+          <div class="glass">
+            <div class="glass-liquid"></div>
+            <div class="glass-shine"></div>
+            <div class="glass-ice ice-1"></div>
+            <div class="glass-ice ice-2"></div>
+            <div class="glass-ice ice-3"></div>
           </div>
-          <div class="straw"></div>
-          <div class="garnish">🍊</div>
-        </div>
-        <div class="hero-fruits-ring">
-          <span>🥭</span><span>🍓</span><span>🥝</span><span>🍍</span>
-        </div>
-      </div>
-    </section>
-
-    <!-- ========== ABOUT SECTION ========== -->
-    <section class="about" id="about">
-      <div class="container">
-        <div class="section-header">
-          <span class="section-badge">About Us</span>
-          <h2>Why Choose <span class="gradient-text">Juicy Vibe?</span></h2>
-          <p>We believe good health starts with what you drink. Every juice is made fresh, every time!</p>
-        </div>
-
-        <div class="about-grid">
-          <div class="about-card">
-            <div class="about-icon">🌿</div>
-            <h3>100% Natural</h3>
-            <p>No artificial colors, flavors, or preservatives. Pure nature in every glass!</p>
-          </div>
-          <div class="about-card">
-            <div class="about-icon">⚡</div>
-            <h3>Fresh Daily</h3>
-            <p>Made fresh every single day. We never compromise on freshness and quality!</p>
-          </div>
-          <div class="about-card">
-            <div class="about-icon">❤️</div>
-            <h3>Made with Love</h3>
-            <p>Each glass is crafted with care and passion for the best experience!</p>
-          </div>
-          <div class="about-card">
-            <div class="about-icon">💎</div>
-            <h3>Premium Quality</h3>
-            <p>We source only the finest seasonal fruits to deliver premium quality!</p>
-          </div>
-        </div>
-
-        <div class="about-story">
-          <div class="story-emoji">🍃</div>
-          <h3>Our Story</h3>
-          <p>
-            Welcome to <strong>Juicy Vibe</strong> — where every sip tells a story of freshness, health,
-            and happiness! We started with a simple dream: to bring the goodness of nature to your doorstep.
-            Located in the heart of Haryana, we source the freshest seasonal fruits to craft juices that are
-            as vibrant as life itself. From refreshing mango bliss to zingy kiwi smoothies, every flavor is
-            a journey. Come, experience the vibe!
-          </p>
+          <div class="glass-straw"></div>
         </div>
       </div>
     </section>
 
-    <!-- ========== POPULAR JUICES SECTION ========== -->
-    <section class="menu" id="menu">
+    <!-- ════════════ WHY US ════════════ -->
+    <section class="why" id="why" aria-labelledby="why-heading">
       <div class="container">
-        <div class="section-header">
-          <span class="section-badge">Our Menu</span>
-          <h2>Popular <span class="gradient-text">Juices</span></h2>
-          <p>Handpicked flavors that our customers absolutely love!</p>
+        <div class="why-header" data-reveal>
+          <span class="overline">Why Juicy Vibe</span>
+          <h2 id="why-heading">Made the right way,<br>every single day.</h2>
         </div>
-
-        <div class="menu-grid">
-
-          <div class="juice-card mango">
-            <div class="card-top">
-              <div class="juice-emoji">🥭</div>
-              <span class="card-tag">⭐ Bestseller</span>
-            </div>
-            <div class="card-body">
-              <h3>Mango Juice</h3>
-              <p>Sweet, tropical, and refreshing. Made from Alphonso mangoes!</p>
-              <div class="stars">⭐⭐⭐⭐⭐ <span>5.0</span></div>
-              <div class="card-footer">
-                <span class="price">₹ 60</span>
-                <button class="add-btn">+ Add</button>
-              </div>
-            </div>
+        <div class="why-grid">
+          <div class="why-card" data-reveal style="--delay:80ms">
+            <div class="why-icon" aria-hidden="true">🧃</div>
+            <h3>Cold-Pressed Daily</h3>
+            <p>We press every batch fresh each morning. No heat, no oxidation — maximum vitamins, enzymes, and flavour in every bottle.</p>
           </div>
-
-          <div class="juice-card orange">
-            <div class="card-top">
-              <div class="juice-emoji">🍊</div>
-              <span class="card-tag">🔥 Popular</span>
-            </div>
-            <div class="card-body">
-              <h3>Orange Juice</h3>
-              <p>Tangy, citrusy and full of Vitamin C. A morning classic!</p>
-              <div class="stars">⭐⭐⭐⭐⭐ <span>5.0</span></div>
-              <div class="card-footer">
-                <span class="price">₹ 50</span>
-                <button class="add-btn">+ Add</button>
-              </div>
-            </div>
+          <div class="why-card" data-reveal style="--delay:160ms">
+            <div class="why-icon" aria-hidden="true">🌿</div>
+            <h3>No Added Sugar</h3>
+            <p>Zero syrups, zero concentrates, zero guilt. The sweetness you taste is pure, real fruit — exactly as nature made it.</p>
           </div>
-
-          <div class="juice-card watermelon">
-            <div class="card-top">
-              <div class="juice-emoji">🍉</div>
-              <span class="card-tag">☀️ Summer Hit</span>
-            </div>
-            <div class="card-body">
-              <h3>Watermelon Juice</h3>
-              <p>Cool, hydrating watermelon juice. Beat the heat in style!</p>
-              <div class="stars">⭐⭐⭐⭐⭐ <span>4.9</span></div>
-              <div class="card-footer">
-                <span class="price">₹ 45</span>
-                <button class="add-btn">+ Add</button>
-              </div>
-            </div>
-          </div>
-
-          <div class="juice-card pineapple">
-            <div class="card-top">
-              <div class="juice-emoji">🍍</div>
-              <span class="card-tag">🌴 Exotic</span>
-            </div>
-            <div class="card-body">
-              <h3>Pineapple Juice</h3>
-              <p>Tropical sweetness with a tangy twist. Party in a glass!</p>
-              <div class="stars">⭐⭐⭐⭐⭐ <span>4.8</span></div>
-              <div class="card-footer">
-                <span class="price">₹ 65</span>
-                <button class="add-btn">+ Add</button>
-              </div>
-            </div>
-          </div>
-
-          <div class="juice-card strawberry">
-            <div class="card-top">
-              <div class="juice-emoji">🍓</div>
-              <span class="card-tag">💕 Favorite</span>
-            </div>
-            <div class="card-body">
-              <h3>Strawberry Shake</h3>
-              <p>Creamy, dreamy strawberry shake. Comfort in every sip!</p>
-              <div class="stars">⭐⭐⭐⭐⭐ <span>5.0</span></div>
-              <div class="card-footer">
-                <span class="price">₹ 80</span>
-                <button class="add-btn">+ Add</button>
-              </div>
-            </div>
-          </div>
-
-          <div class="juice-card kiwi">
-            <div class="card-top">
-              <div class="juice-emoji">🥝</div>
-              <span class="card-tag">💚 Healthy</span>
-            </div>
-            <div class="card-body">
-              <h3>Kiwi Smoothie</h3>
-              <p>Nutrient-packed green goodness. Your wellness in a glass!</p>
-              <div class="stars">⭐⭐⭐⭐⭐ <span>4.9</span></div>
-              <div class="card-footer">
-                <span class="price">₹ 75</span>
-                <button class="add-btn">+ Add</button>
-              </div>
-            </div>
-          </div>
-
-        </div>
-      </div>
-    </section>
-
-    <!-- ========== ANIMAL MASCOT SECTION ========== -->
-    <section class="mascots" id="mascots">
-      <div class="container">
-        <div class="section-header">
-          <span class="section-badge">Fun Zone</span>
-          <h2>Our Juice <span class="gradient-text">Fans!</span></h2>
-          <p>Even our animal friends can't resist the freshness of Juicy Vibe!</p>
-        </div>
-
-        <div class="mascot-grid">
-          <div class="mascot-card">
-            <div class="mascot-emoji">🐱</div>
-            <div class="speech-bubble">"Meow! This Orange Juice is purrr-fect! 🍊"</div>
-            <div class="mascot-drink">🥤</div>
-            <h4>Citrus Cat</h4>
-            <p>Orange Juice Addict</p>
-          </div>
-          <div class="mascot-card">
-            <div class="mascot-emoji">🐰</div>
-            <div class="speech-bubble">"Hop hop! Mango juice makes me so happy! 🥭"</div>
-            <div class="mascot-drink">🥤</div>
-            <h4>Mango Bunny</h4>
-            <p>Mango Juice Lover</p>
-          </div>
-          <div class="mascot-card">
-            <div class="mascot-emoji">🐼</div>
-            <div class="speech-bubble">"Bamboo? No thanks! Kiwi smoothie is life! 🥝"</div>
-            <div class="mascot-drink">🥤</div>
-            <h4>Kiwi Panda</h4>
-            <p>Kiwi Smoothie Fan</p>
-          </div>
-          <div class="mascot-card">
-            <div class="mascot-emoji">🐒</div>
-            <div class="speech-bubble">"OOH OOH! Pineapple juice is my jungle jam! 🍍"</div>
-            <div class="mascot-drink">🥤</div>
-            <h4>Tropic Monkey</h4>
-            <p>Pineapple Juice Fan</p>
+          <div class="why-card" data-reveal style="--delay:240ms">
+            <div class="why-icon" aria-hidden="true">📍</div>
+            <h3>Locally Sourced</h3>
+            <p>We partner with farms in Haryana and nearby regions for seasonal, fresh-picked produce — shorter journey, better taste.</p>
           </div>
         </div>
       </div>
     </section>
 
-    <!-- ========== GALLERY SECTION ========== -->
-    <section class="gallery" id="gallery">
+    <!-- ════════════ MENU ════════════ -->
+    <section class="menu" id="menu" aria-labelledby="menu-heading">
       <div class="container">
-        <div class="section-header">
-          <span class="section-badge">Gallery</span>
-          <h2>Juicy <span class="gradient-text">Gallery</span></h2>
-          <p>A visual feast of our freshest creations — hover to explore!</p>
+        <div class="menu-header" data-reveal>
+          <span class="overline">Our Menu</span>
+          <h2 id="menu-heading">What we're pressing<br>right now.</h2>
+        </div>
+        <div class="menu-tabs" role="tablist" aria-label="Menu categories">
+          <button class="tab-btn active" data-tab="juices"    role="tab" aria-selected="true"  aria-controls="group-juices">Juices</button>
+          <button class="tab-btn"        data-tab="smoothies" role="tab" aria-selected="false" aria-controls="group-smoothies">Smoothies</button>
+          <button class="tab-btn"        data-tab="boosters"  role="tab" aria-selected="false" aria-controls="group-boosters">Boosters</button>
         </div>
 
-        <div class="gallery-grid">
-          <div class="gallery-item g1"><span>🥭</span><div class="g-overlay">Mango Delight</div></div>
-          <div class="gallery-item g2"><span>🍊</span><div class="g-overlay">Orange Bliss</div></div>
-          <div class="gallery-item g3"><span>🍉</span><div class="g-overlay">Watermelon Cool</div></div>
-          <div class="gallery-item g4"><span>🍍</span><div class="g-overlay">Pineapple Punch</div></div>
-          <div class="gallery-item g5"><span>🍓</span><div class="g-overlay">Berry Shake</div></div>
-          <div class="gallery-item g6"><span>🥝</span><div class="g-overlay">Kiwi Power</div></div>
-          <div class="gallery-item g7"><span>🍋</span><div class="g-overlay">Lemon Zing</div></div>
-          <div class="gallery-item g8"><span>🍇</span><div class="g-overlay">Grape Crush</div></div>
-          <div class="gallery-item g9"><span>🫐</span><div class="g-overlay">Blueberry Dream</div></div>
-          <div class="gallery-item g10"><span>🍑</span><div class="g-overlay">Peach Paradise</div></div>
-          <div class="gallery-item g11"><span>🍒</span><div class="g-overlay">Cherry Kiss</div></div>
-          <div class="gallery-item g12"><span>🌴</span><div class="g-overlay">Coconut Chill</div></div>
+        <!-- JUICES -->
+        <div class="menu-group active" data-group="juices" id="group-juices" role="tabpanel">
+          <div class="menu-grid">
+            <article class="menu-card" data-reveal style="--delay:0ms">
+              <div class="card-img" style="background:linear-gradient(140deg,#fde68a 0%,#f59e0b 45%,#ea580c 100%)" role="img" aria-label="Photo placeholder: Mango Gold juice">
+                <span class="card-img-label">📷 Photo coming soon</span>
+              </div>
+              <div class="card-body">
+                <h3>Mango Gold</h3>
+                <p class="card-ingredients">Alphonso mango · fresh ginger · turmeric</p>
+                <div class="card-footer-row">
+                  <span class="card-price">₹60</span>
+                  <button class="card-order">Order</button>
+                </div>
+              </div>
+            </article>
+            <article class="menu-card" data-reveal style="--delay:80ms">
+              <div class="card-img" style="background:linear-gradient(140deg,#fed7aa 0%,#f97316 50%,#dc2626 100%)" role="img" aria-label="Photo placeholder: Citrus Sunrise juice">
+                <span class="card-img-label">📷 Photo coming soon</span>
+              </div>
+              <div class="card-body">
+                <h3>Citrus Sunrise</h3>
+                <p class="card-ingredients">Orange · lemon · carrot · ginger</p>
+                <div class="card-footer-row">
+                  <span class="card-price">₹50</span>
+                  <button class="card-order">Order</button>
+                </div>
+              </div>
+            </article>
+            <article class="menu-card" data-reveal style="--delay:160ms">
+              <div class="card-img" style="background:linear-gradient(140deg,#fecaca 0%,#f43f5e 50%,#881337 100%)" role="img" aria-label="Photo placeholder: Watermelon Cooler juice">
+                <span class="card-img-label">📷 Photo coming soon</span>
+              </div>
+              <div class="card-body">
+                <h3>Watermelon Cooler</h3>
+                <p class="card-ingredients">Watermelon · fresh mint · lime</p>
+                <div class="card-footer-row">
+                  <span class="card-price">₹45</span>
+                  <button class="card-order">Order</button>
+                </div>
+              </div>
+            </article>
+            <article class="menu-card" data-reveal style="--delay:240ms">
+              <div class="card-img" style="background:linear-gradient(140deg,#fef9c3 0%,#fbbf24 50%,#92400e 100%)" role="img" aria-label="Photo placeholder: Pineapple Bliss juice">
+                <span class="card-img-label">📷 Photo coming soon</span>
+              </div>
+              <div class="card-body">
+                <h3>Pineapple Bliss</h3>
+                <p class="card-ingredients">Pineapple · coconut water · fresh basil</p>
+                <div class="card-footer-row">
+                  <span class="card-price">₹65</span>
+                  <button class="card-order">Order</button>
+                </div>
+              </div>
+            </article>
+          </div>
+        </div>
+
+        <!-- SMOOTHIES -->
+        <div class="menu-group" data-group="smoothies" id="group-smoothies" role="tabpanel">
+          <div class="menu-grid">
+            <article class="menu-card" data-reveal style="--delay:0ms">
+              <div class="card-img" style="background:linear-gradient(140deg,#fda4af 0%,#e11d48 50%,#881337 100%)" role="img" aria-label="Photo placeholder: Berry Dream smoothie">
+                <span class="card-img-label">📷 Photo coming soon</span>
+              </div>
+              <div class="card-body">
+                <h3>Berry Dream</h3>
+                <p class="card-ingredients">Strawberry · banana · almond milk</p>
+                <div class="card-footer-row">
+                  <span class="card-price">₹80</span>
+                  <button class="card-order">Order</button>
+                </div>
+              </div>
+            </article>
+            <article class="menu-card" data-reveal style="--delay:80ms">
+              <div class="card-img" style="background:linear-gradient(140deg,#bbf7d0 0%,#4ade80 50%,#14532d 100%)" role="img" aria-label="Photo placeholder: Green Power smoothie">
+                <span class="card-img-label">📷 Photo coming soon</span>
+              </div>
+              <div class="card-body">
+                <h3>Green Power</h3>
+                <p class="card-ingredients">Spinach · kiwi · apple · chia seeds</p>
+                <div class="card-footer-row">
+                  <span class="card-price">₹75</span>
+                  <button class="card-order">Order</button>
+                </div>
+              </div>
+            </article>
+            <article class="menu-card" data-reveal style="--delay:160ms">
+              <div class="card-img" style="background:linear-gradient(140deg,#fef08a 0%,#fb923c 40%,#0f766e 100%)" role="img" aria-label="Photo placeholder: Tropical Storm smoothie">
+                <span class="card-img-label">📷 Photo coming soon</span>
+              </div>
+              <div class="card-body">
+                <h3>Tropical Storm</h3>
+                <p class="card-ingredients">Mango · pineapple · coconut · lime</p>
+                <div class="card-footer-row">
+                  <span class="card-price">₹70</span>
+                  <button class="card-order">Order</button>
+                </div>
+              </div>
+            </article>
+            <article class="menu-card" data-reveal style="--delay:240ms">
+              <div class="card-img" style="background:linear-gradient(140deg,#fed7aa 0%,#fb923c 50%,#7c2d12 100%)" role="img" aria-label="Photo placeholder: Peach Velvet smoothie">
+                <span class="card-img-label">📷 Photo coming soon</span>
+              </div>
+              <div class="card-body">
+                <h3>Peach Velvet</h3>
+                <p class="card-ingredients">Peach · vanilla · oat milk</p>
+                <div class="card-footer-row">
+                  <span class="card-price">₹75</span>
+                  <button class="card-order">Order</button>
+                </div>
+              </div>
+            </article>
+          </div>
+        </div>
+
+        <!-- BOOSTERS -->
+        <div class="menu-group" data-group="boosters" id="group-boosters" role="tabpanel">
+          <div class="menu-grid">
+            <article class="menu-card" data-reveal style="--delay:0ms">
+              <div class="card-img" style="background:linear-gradient(140deg,#fef9c3 0%,#facc15 50%,#78350f 100%)" role="img" aria-label="Photo placeholder: Immunity Shot booster">
+                <span class="card-img-label">📷 Photo coming soon</span>
+              </div>
+              <div class="card-body">
+                <h3>Immunity Shot</h3>
+                <p class="card-ingredients">Ginger · lemon · cayenne · honey</p>
+                <div class="card-footer-row">
+                  <span class="card-price">₹30</span>
+                  <button class="card-order">Order</button>
+                </div>
+              </div>
+            </article>
+            <article class="menu-card" data-reveal style="--delay:80ms">
+              <div class="card-img" style="background:linear-gradient(140deg,#fde68a 0%,#f59e0b 50%,#7c2d12 100%)" role="img" aria-label="Photo placeholder: Glow Shot booster">
+                <span class="card-img-label">📷 Photo coming soon</span>
+              </div>
+              <div class="card-body">
+                <h3>Glow Shot</h3>
+                <p class="card-ingredients">Turmeric · black pepper · honey · lemon</p>
+                <div class="card-footer-row">
+                  <span class="card-price">₹30</span>
+                  <button class="card-order">Order</button>
+                </div>
+              </div>
+            </article>
+            <article class="menu-card" data-reveal style="--delay:160ms">
+              <div class="card-img" style="background:linear-gradient(140deg,#d1fae5 0%,#34d399 50%,#064e3b 100%)" role="img" aria-label="Photo placeholder: Energy Boost booster">
+                <span class="card-img-label">📷 Photo coming soon</span>
+              </div>
+              <div class="card-body">
+                <h3>Energy Boost</h3>
+                <p class="card-ingredients">Wheatgrass · spirulina · lemon · mint</p>
+                <div class="card-footer-row">
+                  <span class="card-price">₹35</span>
+                  <button class="card-order">Order</button>
+                </div>
+              </div>
+            </article>
+          </div>
         </div>
       </div>
     </section>
 
-    <!-- ========== REVIEWS SECTION ========== -->
-    <section class="reviews" id="reviews">
+    <!-- ════════════ STORY ════════════ -->
+    <section class="story" id="story" aria-labelledby="story-heading">
       <div class="container">
-        <div class="section-header">
-          <span class="section-badge">Testimonials</span>
-          <h2>What Our <span class="gradient-text">Customers Say</span></h2>
-          <p>Real love from real juice lovers!</p>
-        </div>
-
-        <div class="reviews-grid">
-          <div class="review-card">
-            <div class="review-stars">⭐⭐⭐⭐⭐</div>
-            <p class="review-text">
-              "The best mango juice I've ever had! So fresh and natural. I order every single day now.
-              Juicy Vibe is absolutely amazing — never going anywhere else!"
-            </p>
-            <div class="reviewer">
-              <div class="reviewer-avatar">👩</div>
-              <div>
-                <strong>Priya Sharma</strong>
-                <span>Kurukshetra</span>
-              </div>
-            </div>
+        <div class="story-inner">
+          <div class="story-text" data-reveal>
+            <span class="overline">Our Ingredients</span>
+            <h2 id="story-heading">Sourced fresh.<br>Never frozen.</h2>
+            <p>Every fruit that goes into a Juicy Vibe glass is handpicked at peak ripeness from farms in Haryana and neighbouring regions. We visit our suppliers, we know our farmers, and we taste every batch. When something isn't right, it doesn't go in the press — it's that simple. Seasonal means better flavour, better nutrition, and a better deal for the farmers who grow it.</p>
           </div>
-
-          <div class="review-card">
-            <div class="review-stars">⭐⭐⭐⭐⭐</div>
-            <p class="review-text">
-              "Tried the strawberry shake and oh my god! It's creamy, fresh, and absolutely delicious.
-              The packaging is cute too. Highly recommend to everyone!"
-            </p>
-            <div class="reviewer">
-              <div class="reviewer-avatar">👨</div>
-              <div>
-                <strong>Rahul Verma</strong>
-                <span>Pehowa</span>
-              </div>
+          <div class="fruit-row" aria-label="Fruits we use" data-reveal style="--delay:120ms">
+            <div class="fruit-pill">
+              <div class="fruit-pill-orb" style="background:radial-gradient(circle at 38% 34%,#fde68a,#f59e0b)" aria-hidden="true">🥭</div>
+              <span>Mango</span>
             </div>
-          </div>
-
-          <div class="review-card">
-            <div class="review-stars">⭐⭐⭐⭐⭐</div>
-            <p class="review-text">
-              "Kiwi smoothie is my daily morning ritual now. So healthy and tasty! Quality is consistent
-              and service is always amazing. 10/10 would recommend!"
-            </p>
-            <div class="reviewer">
-              <div class="reviewer-avatar">👩</div>
-              <div>
-                <strong>Anjali Singh</strong>
-                <span>Haryana</span>
-              </div>
+            <div class="fruit-pill">
+              <div class="fruit-pill-orb" style="background:radial-gradient(circle at 38% 34%,#fed7aa,#f97316)" aria-hidden="true">🍊</div>
+              <span>Orange</span>
             </div>
-          </div>
-
-          <div class="review-card">
-            <div class="review-stars">⭐⭐⭐⭐⭐</div>
-            <p class="review-text">
-              "Watermelon juice in summer is a lifesaver! So refreshing and natural. No sugar added,
-              just pure fruit goodness. Juicy Vibe is the best in town!"
-            </p>
-            <div class="reviewer">
-              <div class="reviewer-avatar">👦</div>
-              <div>
-                <strong>Arjun Malik</strong>
-                <span>Kurukshetra</span>
-              </div>
+            <div class="fruit-pill">
+              <div class="fruit-pill-orb" style="background:radial-gradient(circle at 38% 34%,#bbf7d0,#16a34a)" aria-hidden="true">🥝</div>
+              <span>Kiwi</span>
+            </div>
+            <div class="fruit-pill">
+              <div class="fruit-pill-orb" style="background:radial-gradient(circle at 38% 34%,#fda4af,#e11d48)" aria-hidden="true">🍓</div>
+              <span>Strawberry</span>
+            </div>
+            <div class="fruit-pill">
+              <div class="fruit-pill-orb" style="background:radial-gradient(circle at 38% 34%,#fef9c3,#d97706)" aria-hidden="true">🍍</div>
+              <span>Pineapple</span>
             </div>
           </div>
         </div>
       </div>
     </section>
 
-    <!-- ========== CONTACT SECTION ========== -->
-    <section class="contact" id="contact">
+    <!-- ════════════ VISIT ════════════ -->
+    <section class="visit" id="visit" aria-labelledby="visit-heading">
       <div class="container">
-        <div class="section-header">
-          <span class="section-badge">Get in Touch</span>
-          <h2>Contact <span class="gradient-text">Us</span></h2>
-          <p>We'd love to hear from you! Reach out anytime.</p>
-        </div>
-
-        <div class="contact-grid">
-          <div class="contact-card">
-            <div class="contact-icon">👤</div>
-            <h4>Owner</h4>
-            <p>Samiksha Dandyan</p>
-          </div>
-          <div class="contact-card">
-            <div class="contact-icon">📞</div>
-            <h4>Phone</h4>
-            <p><a href="tel:8168487782">8168487782</a></p>
-          </div>
-          <div class="contact-card">
-            <div class="contact-icon">📧</div>
-            <h4>Email</h4>
-            <p><a href="mailto:samikshadandyan@gmail.com">samikshadandyan@gmail.com</a></p>
-          </div>
-          <div class="contact-card">
-            <div class="contact-icon">📍</div>
-            <h4>Address</h4>
-            <p>Ishaq, Pehowa, District Kurukshetra (KKR), Haryana</p>
-          </div>
-        </div>
-
-        <div class="contact-hours">
-          <div class="hours-icon">🕐</div>
-          <h3>Opening Hours</h3>
-          <div class="hours-grid">
-            <div class="hours-item">
-              <span>Monday – Saturday</span>
-              <strong>8:00 AM – 9:00 PM</strong>
-            </div>
-            <div class="hours-divider"></div>
-            <div class="hours-item">
-              <span>Sunday</span>
-              <strong>9:00 AM – 7:00 PM</strong>
+        <div class="visit-inner">
+          <div class="visit-info" data-reveal>
+            <span class="overline">Find Us</span>
+            <h2 id="visit-heading">Come in,<br>drink up.</h2>
+            <ul class="hours-list" aria-label="Opening hours">
+              <li><span class="hours-day">Monday – Friday</span><span class="hours-time">8:00 AM – 9:00 PM</span></li>
+              <li><span class="hours-day">Saturday</span><span class="hours-time">8:00 AM – 9:00 PM</span></li>
+              <li><span class="hours-day">Sunday</span><span class="hours-time">9:00 AM – 7:00 PM</span></li>
+            </ul>
+            <div class="visit-contacts">
+              <div class="contact-line">
+                <span aria-hidden="true">📍</span>
+                <span>Ishaq, Pehowa, District Kurukshetra, Haryana</span>
+              </div>
+              <div class="contact-line">
+                <span aria-hidden="true">📞</span>
+                <span><a href="tel:8168487782">8168487782</a></span>
+              </div>
+              <div class="contact-line">
+                <span aria-hidden="true">✉️</span>
+                <span><a href="mailto:samikshadandyan@gmail.com">samikshadandyan@gmail.com</a></span>
+              </div>
+              <div class="contact-line">
+                <span aria-hidden="true">👤</span>
+                <span><strong>Samiksha Dandyan</strong> — Owner</span>
+              </div>
             </div>
           </div>
-          <p class="hours-tagline">Come visit us and taste the freshness! 🍊✨</p>
+
+          <div class="visit-cta-box" data-reveal style="--delay:120ms">
+            <span class="overline" style="color:var(--berry)">Pickup available</span>
+            <h3>Order ahead,<br>skip the wait.</h3>
+            <p>Call or message us to place your order and pick it up fresh. We'll have it ready when you arrive.</p>
+            <div class="visit-btns">
+              <a href="tel:8168487782" class="btn btn-primary">Call to Order</a>
+              <a href="mailto:samikshadandyan@gmail.com" class="btn btn-outline">Email Us</a>
+            </div>
+          </div>
+        </div>
+
+        <div class="final-cta" data-reveal>
+          <h2>Life's too short<br>for <em>bad juice.</em></h2>
+          <p>Cold-pressed daily in Pehowa — fresh until it's gone.</p>
+          <a href="tel:8168487782" class="btn btn-primary">Order Now — 8168487782</a>
         </div>
       </div>
     </section>
 
   </main>
 
-  <!-- ========== FOOTER ========== -->
-  <footer class="footer">
+  <!-- ════════════ FOOTER ════════════ -->
+  <footer class="footer" role="contentinfo">
     <div class="container">
-      <div class="footer-grid">
-
-        <div class="footer-brand">
-          <div class="footer-logo">🍊 Juicy Vibe</div>
-          <p>Fresh Juice, Fresh Mood! Experience the burst of nature in every sip. Crafted with love from the finest fruits.</p>
-          <div class="social-icons">
-            <a href="#" class="social-icon" aria-label="Facebook">📘</a>
-            <a href="#" class="social-icon" aria-label="Instagram">📸</a>
-            <a href="#" class="social-icon" aria-label="Twitter">🐦</a>
-            <a href="#" class="social-icon" aria-label="YouTube">▶️</a>
-          </div>
-        </div>
-
-        <div class="footer-links">
-          <h4>Quick Links</h4>
-          <a href="#home">Home</a>
-          <a href="#about">About Us</a>
-          <a href="#menu">Our Menu</a>
-          <a href="#gallery">Gallery</a>
-          <a href="#reviews">Reviews</a>
-          <a href="#contact">Contact</a>
-        </div>
-
-        <div class="footer-links">
-          <h4>Our Juices</h4>
-          <a href="#menu">Mango Juice</a>
-          <a href="#menu">Orange Juice</a>
-          <a href="#menu">Watermelon Juice</a>
-          <a href="#menu">Pineapple Juice</a>
-          <a href="#menu">Strawberry Shake</a>
-          <a href="#menu">Kiwi Smoothie</a>
-        </div>
-
-        <div class="footer-contact-info">
-          <h4>Contact Info</h4>
-          <p>📍 Ishaq, Pehowa, KKR, Haryana</p>
-          <p>📞 8168487782</p>
-          <p>📧 samikshadandyan@gmail.com</p>
-          <p>⏰ Mon–Sat: 8AM – 9PM</p>
-          <p>⏰ Sun: 9AM – 7PM</p>
-        </div>
-
-      </div>
-
-      <div class="footer-bottom">
-        <p>© 2024 <strong>Juicy Vibe</strong>. All rights reserved. Made with ❤️ by <strong>Samiksha Dandyan</strong></p>
+      <div class="footer-inner">
+        <span class="footer-logo">Juicy Vibe<span class="logo-dot" aria-hidden="true" style="display:inline-block;margin-left:3px;vertical-align:middle"></span></span>
+        <p class="footer-copy">© 2024 Juicy Vibe · Samiksha Dandyan · Pehowa, Haryana</p>
+        <nav class="socials" aria-label="Social media">
+          <a href="#" class="social-btn" aria-label="Facebook">f</a>
+          <a href="#" class="social-btn" aria-label="Instagram">in</a>
+          <a href="#" class="social-btn" aria-label="Twitter / X">𝕏</a>
+        </nav>
       </div>
     </div>
   </footer>
 
+  <script>
+    /* ──────────────────────────────────────────
+       0. Prefers-reduced-motion guard
+    ────────────────────────────────────────── */
+    const noMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+    /* ──────────────────────────────────────────
+       1. Header: shrink + shadow on scroll
+    ────────────────────────────────────────── */
+    const header = document.getElementById('site-header');
+    function onScrollHeader() {
+      header.classList.toggle('scrolled', window.scrollY > 50);
+    }
+    window.addEventListener('scroll', onScrollHeader, { passive: true });
+
+    /* ──────────────────────────────────────────
+       2. Mobile nav toggle
+    ────────────────────────────────────────── */
+    const navToggle = document.getElementById('nav-toggle');
+    const navLinks  = document.getElementById('nav-links');
+    navToggle.addEventListener('click', () => {
+      const open = navLinks.classList.toggle('open');
+      navToggle.setAttribute('aria-expanded', open);
+    });
+    // Close nav on link click
+    navLinks.querySelectorAll('a').forEach(a => {
+      a.addEventListener('click', () => {
+        navLinks.classList.remove('open');
+        navToggle.setAttribute('aria-expanded', 'false');
+      });
+    });
+
+    /* ──────────────────────────────────────────
+       3. Menu tab switcher
+    ────────────────────────────────────────── */
+    const tabBtns  = document.querySelectorAll('.tab-btn');
+    const menuGroups = document.querySelectorAll('.menu-group');
+    tabBtns.forEach(btn => {
+      btn.addEventListener('click', () => {
+        tabBtns.forEach(b => { b.classList.remove('active'); b.setAttribute('aria-selected', 'false'); });
+        menuGroups.forEach(g => g.classList.remove('active'));
+        btn.classList.add('active');
+        btn.setAttribute('aria-selected', 'true');
+        const target = document.querySelector(`[data-group="${btn.dataset.tab}"]`);
+        target.classList.add('active');
+        // Re-run reveal for newly visible cards
+        if (!noMotion) target.querySelectorAll('[data-reveal]').forEach(el => el.classList.add('is-visible'));
+      });
+    });
+
+    /* ──────────────────────────────────────────
+       4. Scroll-reveal via IntersectionObserver
+    ────────────────────────────────────────── */
+    if (!noMotion) {
+      const revealObs = new IntersectionObserver((entries) => {
+        entries.forEach(e => {
+          if (e.isIntersecting) {
+            e.target.classList.add('is-visible');
+            revealObs.unobserve(e.target);
+          }
+        });
+      }, { threshold: 0.12 });
+      document.querySelectorAll('[data-reveal]').forEach(el => revealObs.observe(el));
+    }
+
+    /* ──────────────────────────────────────────
+       5. Parallax shapes on scroll
+    ────────────────────────────────────────── */
+    if (!noMotion) {
+      const parallaxEls = document.querySelectorAll('[data-speed]');
+      function onScrollParallax() {
+        const sy = window.scrollY;
+        parallaxEls.forEach(el => {
+          const speed = parseFloat(el.dataset.speed) || 0;
+          el.style.transform = `translateY(${sy * speed * 0.1}px)`;
+        });
+      }
+      window.addEventListener('scroll', onScrollParallax, { passive: true });
+    }
+
+    /* ──────────────────────────────────────────
+       6. Smooth scroll for in-page links
+    ────────────────────────────────────────── */
+    document.querySelectorAll('a[href^="#"]').forEach(a => {
+      a.addEventListener('click', e => {
+        const target = document.querySelector(a.getAttribute('href'));
+        if (!target) return;
+        e.preventDefault();
+        const offset = document.getElementById('site-header').offsetHeight;
+        window.scrollTo({ top: target.offsetTop - offset, behavior: noMotion ? 'auto' : 'smooth' });
+      });
+    });
+  </script>
 </body>
 </html>
