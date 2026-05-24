@@ -798,6 +798,28 @@
       }
       [data-reveal] { opacity: 1; transform: none; }
     }
+  
+    /* ─── VIBE SCENE ─────────────────────────────────── */
+    .vibe-section {
+      background: var(--cream);
+      overflow: hidden;
+    }
+    .vibe-label {
+      text-align: center;
+      padding: clamp(3rem,6vw,5rem) 1.5rem 2rem;
+    }
+    .vibe-label h2 { margin: 0.5rem 0 1rem; letter-spacing: -0.02em; }
+    .vibe-label h2 em { font-style: italic; color: var(--citrus); }
+    .vibe-label p { max-width: 400px; margin: 0 auto; }
+    .vibe-scene-wrap {
+      width: 100%;
+      max-height: 480px;
+      overflow: hidden;
+      border-top: 1px solid var(--border);
+      border-bottom: 1px solid var(--border);
+      box-shadow: inset 0 8px 32px rgba(28,25,23,0.04);
+    }
+    .vibe-scene-wrap svg { display: block; }
   </style>
 </head>
 <body>
@@ -886,6 +908,427 @@
             <p>We partner with farms in Haryana and nearby regions for seasonal, fresh-picked produce — shorter journey, better taste.</p>
           </div>
         </div>
+      </div>
+    </section>
+
+    
+    <!-- ════════════ VIBE SCENE ════════════ -->
+    <section class="vibe-section" aria-label="People enjoying juices at Juicy Vibe">
+      <div class="vibe-label" data-reveal>
+        <span class="overline">The Vibe</span>
+        <h2>Where every sip<br>is a <em>moment</em>.</h2>
+        <p>Pull up a stool. Pick your colour. Let the flavours do the talking.</p>
+      </div>
+      <div class="vibe-scene-wrap" data-reveal style="--delay:120ms">
+        <svg viewBox="0 0 1100 430" xmlns="http://www.w3.org/2000/svg" width="100%" preserveAspectRatio="xMidYMid meet" aria-hidden="true">
+          <defs>
+            <!-- Backgrounds -->
+            <linearGradient id="vs-bg" x1="0" y1="0" x2="0.6" y2="1"><stop offset="0%" stop-color="#fffbeb"/><stop offset="55%" stop-color="#fef3c7"/><stop offset="100%" stop-color="#fde9c4"/></linearGradient>
+            <linearGradient id="vs-wall" x1="0" y1="0" x2="0" y2="1"><stop offset="0%" stop-color="#fefce8"/><stop offset="100%" stop-color="#fde9c4"/></linearGradient>
+            <linearGradient id="vs-ctr-top" x1="0" y1="0" x2="0" y2="1"><stop offset="0%" stop-color="#d97706"/><stop offset="100%" stop-color="#b45309"/></linearGradient>
+            <linearGradient id="vs-ctr-face" x1="0" y1="0" x2="0" y2="1"><stop offset="0%" stop-color="#b45309"/><stop offset="100%" stop-color="#78350f"/></linearGradient>
+            <linearGradient id="vs-floor" x1="0" y1="0" x2="0" y2="1"><stop offset="0%" stop-color="#fbbf24" stop-opacity="0.28"/><stop offset="100%" stop-color="#f59e0b" stop-opacity="0.12"/></linearGradient>
+            <!-- Juice liquids -->
+            <linearGradient id="vs-g1" x1="0" y1="0" x2="0" y2="1"><stop offset="0%" stop-color="#fda4af"/><stop offset="100%" stop-color="#e11d48"/></linearGradient>
+            <linearGradient id="vs-g2" x1="0" y1="0" x2="0" y2="1"><stop offset="0%" stop-color="#fdba74"/><stop offset="100%" stop-color="#ea580c"/></linearGradient>
+            <linearGradient id="vs-g3" x1="0" y1="0" x2="0" y2="1"><stop offset="0%" stop-color="#86efac"/><stop offset="100%" stop-color="#16a34a"/></linearGradient>
+            <linearGradient id="vs-g4" x1="0" y1="0" x2="0" y2="1"><stop offset="0%" stop-color="#fde047"/><stop offset="100%" stop-color="#ca8a04"/></linearGradient>
+            <!-- Stool wood -->
+            <linearGradient id="vs-stool" x1="0" y1="0" x2="0" y2="1"><stop offset="0%" stop-color="#b45309"/><stop offset="100%" stop-color="#78350f"/></linearGradient>
+            <!-- Clip paths for glasses -->
+            <clipPath id="vs-gc1"><path d="M 182,188 L 218,188 L 213,262 L 187,262 Z"/></clipPath>
+            <clipPath id="vs-gc2"><path d="M 482,183 L 518,183 L 513,262 L 487,262 Z"/></clipPath>
+            <clipPath id="vs-gc3"><path d="M 782,188 L 818,188 L 813,262 L 787,262 Z"/></clipPath>
+            <clipPath id="vs-gc4"><path d="M 952,195 L 984,195 L 980,262 L 956,262 Z"/></clipPath>
+          </defs>
+
+          <!-- ── BACKGROUND ── -->
+          <rect width="1100" height="430" fill="url(#vs-bg)"/>
+          <rect width="1100" height="272" fill="url(#vs-wall)"/>
+          <!-- Floor -->
+          <rect y="336" width="1100" height="94" fill="url(#vs-floor)"/>
+          <line x1="0" y1="352" x2="1100" y2="352" stroke="rgba(180,83,9,0.08)" stroke-width="1"/>
+          <line x1="0" y1="370" x2="1100" y2="370" stroke="rgba(180,83,9,0.07)" stroke-width="1"/>
+          <line x1="0" y1="390" x2="1100" y2="390" stroke="rgba(180,83,9,0.06)" stroke-width="1"/>
+          <!-- Vertical plank lines -->
+          <line x1="180" y1="336" x2="190" y2="430" stroke="rgba(180,83,9,0.06)" stroke-width="1"/>
+          <line x1="420" y1="336" x2="430" y2="430" stroke="rgba(180,83,9,0.06)" stroke-width="1"/>
+          <line x1="680" y1="336" x2="690" y2="430" stroke="rgba(180,83,9,0.06)" stroke-width="1"/>
+          <line x1="900" y1="336" x2="910" y2="430" stroke="rgba(180,83,9,0.06)" stroke-width="1"/>
+
+          <!-- ── PENDANT LIGHTS ── -->
+          <!-- Light 1 -->
+          <line x1="200" y1="0" x2="200" y2="64" stroke="rgba(120,53,15,0.3)" stroke-width="1.5"/>
+          <path d="M 172,78 Q 200,72 228,78 L 218,66 L 182,66 Z" fill="#1c1917" opacity="0.82"/>
+          <ellipse cx="200" cy="68" rx="22" ry="7" fill="#fef3c7"/>
+          <ellipse cx="200" cy="68" rx="14" ry="4" fill="rgba(249,115,22,0.25)"/>
+          <circle cx="200" cy="74" r="48" fill="rgba(253,186,116,0.07)"/>
+          <!-- Light 2 -->
+          <line x1="500" y1="0" x2="500" y2="58" stroke="rgba(120,53,15,0.3)" stroke-width="1.5"/>
+          <path d="M 470,74 Q 500,67 530,74 L 519,60 L 481,60 Z" fill="#1c1917" opacity="0.82"/>
+          <ellipse cx="500" cy="63" rx="25" ry="7.5" fill="#fef3c7"/>
+          <ellipse cx="500" cy="63" rx="16" ry="4.5" fill="rgba(249,115,22,0.28)"/>
+          <circle cx="500" cy="68" r="56" fill="rgba(253,186,116,0.06)"/>
+          <!-- Light 3 -->
+          <line x1="800" y1="0" x2="800" y2="64" stroke="rgba(120,53,15,0.3)" stroke-width="1.5"/>
+          <path d="M 772,78 Q 800,72 828,78 L 818,66 L 782,66 Z" fill="#1c1917" opacity="0.82"/>
+          <ellipse cx="800" cy="68" rx="22" ry="7" fill="#fef3c7"/>
+          <ellipse cx="800" cy="68" rx="14" ry="4" fill="rgba(249,115,22,0.25)"/>
+          <circle cx="800" cy="74" r="48" fill="rgba(253,186,116,0.07)"/>
+          <!-- Extra light right -->
+          <line x1="970" y1="0" x2="970" y2="60" stroke="rgba(120,53,15,0.28)" stroke-width="1.5"/>
+          <path d="M 946,73 Q 970,67 994,73 L 984,60 L 956,60 Z" fill="#1c1917" opacity="0.78"/>
+          <ellipse cx="970" cy="63" rx="20" ry="6.5" fill="#fef3c7"/>
+          <circle cx="970" cy="68" r="42" fill="rgba(253,186,116,0.06)"/>
+
+          <!-- ── BACK WALL SHELF ── -->
+          <rect x="38" y="112" width="1024" height="13" rx="3" fill="#92400e" opacity="0.55"/>
+          <rect x="38" y="112" width="1024" height="4" rx="2" fill="rgba(253,186,116,0.35)"/>
+
+          <!-- Shelf bottles + fruits -->
+          <!-- Pink bottle -->
+          <rect x="60" y="68" width="26" height="42" rx="6" fill="#fb7185" opacity="0.85"/>
+          <rect x="70" y="62" width="7" height="10" rx="2" fill="#f43f5e" opacity="0.8"/>
+          <rect x="68" y="61" width="11" height="3" rx="1.5" fill="#e11d48" opacity="0.55"/>
+          <rect x="63" y="80" width="20" height="2" fill="rgba(255,255,255,0.22)"/>
+          <!-- Orange bottle -->
+          <rect x="98" y="72" width="24" height="38" rx="6" fill="#f97316" opacity="0.85"/>
+          <rect x="107" y="66" width="7" height="10" rx="2" fill="#ea580c" opacity="0.8"/>
+          <rect x="105" y="65" width="11" height="3" rx="1.5" fill="#c2410c" opacity="0.5"/>
+          <rect x="101" y="84" width="18" height="2" fill="rgba(255,255,255,0.2)"/>
+          <!-- Mango -->
+          <ellipse cx="148" cy="88" rx="20" ry="26" fill="#f59e0b" opacity="0.88" transform="rotate(-14 148 88)"/>
+          <ellipse cx="148" cy="88" rx="11" ry="15" fill="#fde68a" opacity="0.55" transform="rotate(-14 148 88)"/>
+          <path d="M 148,65 C 144,58 140,55 142,50" stroke="#16a34a" stroke-width="3.5" fill="none" stroke-linecap="round"/>
+          <!-- Yellow jar -->
+          <rect x="178" y="74" width="28" height="36" rx="7" fill="rgba(253,224,71,0.5)" stroke="#eab308" stroke-width="1.5"/>
+          <circle cx="188" cy="87" r="5.5" fill="#f59e0b" opacity="0.75"/>
+          <circle cx="196" cy="94" r="4.5" fill="#f97316" opacity="0.7"/>
+          <!-- Green bottle -->
+          <rect x="218" y="70" width="24" height="40" rx="6" fill="#22c55e" opacity="0.85"/>
+          <rect x="227" y="64" width="7" height="10" rx="2" fill="#16a34a" opacity="0.8"/>
+          <rect x="225" y="63" width="11" height="3" rx="1.5" fill="#15803d" opacity="0.5"/>
+
+          <!-- Center: vintage chalkboard menu -->
+          <rect x="430" y="30" width="240" height="78" rx="10" fill="#1c1917" opacity="0.88"/>
+          <rect x="436" y="36" width="228" height="66" rx="7" fill="none" stroke="rgba(253,186,116,0.45)" stroke-width="1.5"/>
+          <text x="550" y="60" text-anchor="middle" fill="#fde68a" font-size="20" font-family="Georgia,serif" font-style="italic" font-weight="bold">Juicy Vibe</text>
+          <text x="550" y="76" text-anchor="middle" fill="rgba(253,186,116,0.8)" font-size="9.5" font-family="Arial,sans-serif" letter-spacing="4">COLD · PRESSED · FRESH</text>
+          <text x="550" y="92" text-anchor="middle" fill="rgba(253,186,116,0.55)" font-size="8.5" font-family="Arial,sans-serif" letter-spacing="2">Pehowa, Haryana</text>
+
+          <!-- Right shelf items -->
+          <!-- Pineapple -->
+          <ellipse cx="718" cy="90" rx="17" ry="24" fill="#fbbf24" opacity="0.85"/>
+          <ellipse cx="714" cy="67" rx="4" ry="13" fill="#166534" opacity="0.8" transform="rotate(-18 714 67)"/>
+          <ellipse cx="718" cy="64" rx="4" ry="15" fill="#22c55e" opacity="0.78"/>
+          <ellipse cx="722" cy="67" rx="4" ry="13" fill="#166534" opacity="0.8" transform="rotate(18 722 67)"/>
+          <!-- Purple bottle -->
+          <rect x="748" y="68" width="26" height="42" rx="6" fill="#8b5cf6" opacity="0.8"/>
+          <rect x="758" y="62" width="7" height="10" rx="2" fill="#7c3aed" opacity="0.8"/>
+          <!-- Watermelon slice -->
+          <path d="M 792,80 Q 814,58 836,80 Z" fill="#22c55e" opacity="0.72"/>
+          <path d="M 795,80 Q 814,62 833,80 Z" fill="rgba(255,255,255,0.5)"/>
+          <path d="M 798,80 Q 814,66 830,80 Z" fill="#fb7185" opacity="0.8"/>
+          <ellipse cx="807" cy="75" rx="1.8" ry="2.8" fill="#1c1917" opacity="0.5" transform="rotate(-10 807 75)"/>
+          <ellipse cx="814" cy="70" rx="1.8" ry="2.8" fill="#1c1917" opacity="0.5"/>
+          <ellipse cx="821" cy="75" rx="1.8" ry="2.8" fill="#1c1917" opacity="0.5" transform="rotate(10 821 75)"/>
+          <!-- Teal bottle -->
+          <rect x="848" y="70" width="24" height="40" rx="6" fill="rgba(20,184,166,0.8)"/>
+          <rect x="857" y="64" width="7" height="10" rx="2" fill="rgba(13,148,136,0.8)"/>
+          <!-- Strawberry -->
+          <path d="M 894,68 C 882,68 876,78 876,86 C 876,96 882,104 894,107 C 906,104 912,96 912,86 C 912,78 906,68 894,68 Z" fill="#ef4444" opacity="0.78"/>
+          <ellipse cx="887" cy="83" rx="1.2" ry="1.8" fill="rgba(254,240,138,0.75)"/>
+          <ellipse cx="894" cy="90" rx="1.2" ry="1.8" fill="rgba(254,240,138,0.7)"/>
+          <ellipse cx="901" cy="83" rx="1.2" ry="1.8" fill="rgba(254,240,138,0.7)"/>
+          <path d="M 894,68 C 890,62 886,60 887,56" stroke="#16a34a" stroke-width="2.5" fill="none" stroke-linecap="round"/>
+          <path d="M 894,68 C 894,62 894,58 894,54" stroke="#16a34a" stroke-width="2.5" fill="none" stroke-linecap="round"/>
+          <!-- Last jar -->
+          <rect x="928" y="74" width="26" height="36" rx="7" fill="rgba(253,186,116,0.4)" stroke="#f59e0b" stroke-width="1.5"/>
+          <circle cx="938" cy="88" r="5" fill="#f97316" opacity="0.7"/>
+          <circle cx="944" cy="95" r="4" fill="#fbbf24" opacity="0.65"/>
+
+          <!-- ── PEOPLE (drawn before counter) ── -->
+
+          <!-- ═══ PERSON 1 (x=200) — Dark skin, curly hair, coral top, BERRY drink ═══ -->
+          <!-- Lower body / legs visible on stool -->
+          <path d="M 178,258 C 174,272 174,295 176,310 L 188,310 C 186,292 185,270 182,258 Z" fill="#44403c" opacity="0.7"/>
+          <path d="M 222,258 C 226,272 226,295 224,310 L 212,310 C 214,292 215,270 218,258 Z" fill="#44403c" opacity="0.7"/>
+          <!-- Torso (coral/salmon top) -->
+          <path d="M 172,255 C 169,236 168,214 172,200 C 177,188 190,182 200,182 C 210,182 223,188 228,200 C 232,214 231,236 228,255 Z" fill="#f97316"/>
+          <!-- Collar -->
+          <path d="M 193,182 C 193,178 200,175 200,175 C 200,175 207,178 207,182" fill="#fbbf24" opacity="0.6"/>
+          <!-- Neck -->
+          <rect x="194" y="171" width="12" height="16" rx="4" fill="#431407"/>
+          <!-- Head (dark skin) -->
+          <circle cx="200" cy="152" r="26" fill="#431407"/>
+          <ellipse cx="200" cy="149" rx="17" ry="15" fill="#6b2d0f" opacity="0.4"/>
+          <!-- Curly hair -->
+          <circle cx="196" cy="130" r="13" fill="#1c1917"/>
+          <circle cx="208" cy="128" r="12" fill="#1c1917"/>
+          <circle cx="186" cy="136" r="11" fill="#1c1917"/>
+          <circle cx="199" cy="126" r="11" fill="#1c1917"/>
+          <circle cx="213" cy="136" r="10" fill="#1c1917"/>
+          <circle cx="189" cy="145" r="7" fill="#1c1917"/>
+          <circle cx="211" cy="143" r="7" fill="#1c1917"/>
+          <!-- Hair highlight -->
+          <circle cx="202" cy="129" r="4" fill="rgba(255,255,255,0.06)"/>
+          <!-- Eyes -->
+          <ellipse cx="192" cy="151" rx="4" ry="3.5" fill="#fff"/>
+          <ellipse cx="208" cy="151" rx="4" ry="3.5" fill="#fff"/>
+          <circle cx="192" cy="151" r="2.2" fill="#1c1917"/>
+          <circle cx="208" cy="151" r="2.2" fill="#1c1917"/>
+          <circle cx="192.8" cy="150.2" r="0.8" fill="rgba(255,255,255,0.6)"/>
+          <circle cx="208.8" cy="150.2" r="0.8" fill="rgba(255,255,255,0.6)"/>
+          <!-- Big smile -->
+          <path d="M 191,162 Q 200,172 209,162" stroke="#1c1917" stroke-width="2.2" fill="none" stroke-linecap="round"/>
+          <!-- Arm right — hand on glass -->
+          <path d="M 225,210 C 232,226 238,246 238,263" stroke="#431407" stroke-width="13" fill="none" stroke-linecap="round"/>
+          <circle cx="238" cy="262" r="8.5" fill="#431407"/>
+          <!-- Arm left — resting on counter -->
+          <path d="M 175,214 C 168,230 160,250 156,265" stroke="#431407" stroke-width="13" fill="none" stroke-linecap="round"/>
+          <circle cx="155" cy="264" r="8.5" fill="#431407"/>
+
+          <!-- ═══ PERSON 2 (x=500) — Medium skin, short hair, teal top, ORANGE drink ═══ -->
+          <!-- Lower body -->
+          <path d="M 478,258 C 474,272 474,295 476,310 L 488,310 C 486,292 485,270 482,258 Z" fill="#1e40af" opacity="0.65"/>
+          <path d="M 522,258 C 526,272 526,295 524,310 L 512,310 C 514,292 515,270 518,258 Z" fill="#1e40af" opacity="0.65"/>
+          <!-- Torso (teal shirt) -->
+          <path d="M 470,255 C 467,234 467,210 471,197 C 476,186 489,180 500,180 C 511,180 524,186 529,197 C 533,210 533,234 530,255 Z" fill="#0d9488"/>
+          <!-- Short sleeves suggestion -->
+          <ellipse cx="467" cy="210" rx="12" ry="7" fill="#0f766e" opacity="0.6" transform="rotate(-20 467 210)"/>
+          <ellipse cx="533" cy="210" rx="12" ry="7" fill="#0f766e" opacity="0.6" transform="rotate(20 533 210)"/>
+          <!-- Collar V-neck -->
+          <path d="M 493,180 L 500,190 L 507,180" fill="none" stroke="#0f766e" stroke-width="2" opacity="0.7"/>
+          <!-- Neck -->
+          <rect x="493" y="168" width="14" height="17" rx="4" fill="#a16207"/>
+          <!-- Head (medium-warm skin) -->
+          <circle cx="500" cy="148" r="27" fill="#a16207"/>
+          <ellipse cx="500" cy="145" rx="18" ry="16" fill="#b45309" opacity="0.35"/>
+          <!-- Short dark hair -->
+          <path d="M 474,146 C 474,122 485,115 500,115 C 515,115 526,122 526,146" fill="#1c1917"/>
+          <ellipse cx="484" cy="132" rx="9" ry="7" fill="#1c1917"/>
+          <ellipse cx="516" cy="132" rx="9" ry="7" fill="#1c1917"/>
+          <!-- Hair sheen -->
+          <path d="M 490,120 Q 500,117 510,120" stroke="rgba(255,255,255,0.08)" stroke-width="3" fill="none" stroke-linecap="round"/>
+          <!-- Eyes (slightly wider — laughing) -->
+          <ellipse cx="491" cy="147" rx="4.5" ry="3.8" fill="#fff"/>
+          <ellipse cx="509" cy="147" rx="4.5" ry="3.8" fill="#fff"/>
+          <circle cx="491" cy="148" r="2.5" fill="#1c1917"/>
+          <circle cx="509" cy="148" r="2.5" fill="#1c1917"/>
+          <circle cx="491.8" cy="147.2" r="0.9" fill="rgba(255,255,255,0.6)"/>
+          <circle cx="509.8" cy="147.2" r="0.9" fill="rgba(255,255,255,0.6)"/>
+          <!-- Big laugh — showing teeth -->
+          <path d="M 489,160 Q 500,172 511,160" stroke="#1c1917" stroke-width="2.5" fill="none" stroke-linecap="round"/>
+          <path d="M 490,162 Q 500,170 510,162" stroke="rgba(255,255,255,0.6)" stroke-width="2" fill="none"/>
+          <!-- Raised arm holding glass up -->
+          <path d="M 527,206 C 538,218 546,238 544,258 C 542,265 530,267 518,264" stroke="#a16207" stroke-width="14" fill="none" stroke-linecap="round"/>
+          <circle cx="518" cy="263" r="9" fill="#a16207"/>
+          <!-- Left arm on counter -->
+          <path d="M 473,210 C 462,226 454,246 450,263" stroke="#a16207" stroke-width="13" fill="none" stroke-linecap="round"/>
+          <circle cx="449" cy="262" r="8.5" fill="#a16207"/>
+
+          <!-- ═══ PERSON 3 (x=800) — Light skin, long hair, yellow top, GREEN drink ═══ -->
+          <!-- Lower body (jeans) -->
+          <path d="M 778,258 C 774,272 774,295 776,310 L 788,310 C 786,292 785,270 782,258 Z" fill="#374151" opacity="0.7"/>
+          <path d="M 822,258 C 826,272 826,295 824,310 L 812,310 C 814,292 815,270 818,258 Z" fill="#374151" opacity="0.7"/>
+          <!-- Torso (citrus yellow top) -->
+          <path d="M 770,255 C 768,236 768,214 772,200 C 777,188 789,182 800,182 C 811,182 823,188 828,200 C 832,214 832,236 830,255 Z" fill="#fbbf24"/>
+          <!-- Collar -->
+          <ellipse cx="800" cy="183" rx="10" ry="5" fill="#f59e0b" opacity="0.5"/>
+          <!-- Neck -->
+          <rect x="794" y="170" width="12" height="18" rx="4" fill="#fde68a"/>
+          <!-- Head (light/peachy skin) -->
+          <circle cx="800" cy="150" r="27" fill="#fde68a"/>
+          <ellipse cx="800" cy="147" rx="18" ry="16" fill="#fef9c3" opacity="0.45"/>
+          <!-- Long dark-brown flowing hair -->
+          <path d="M 775,142 C 770,164 768,188 770,218 C 771,232 774,248 775,260" stroke="#6b3c0f" stroke-width="20" fill="none" stroke-linecap="round"/>
+          <path d="M 825,142 C 830,164 832,188 830,218 C 829,232 826,248 825,260" stroke="#6b3c0f" stroke-width="20" fill="none" stroke-linecap="round"/>
+          <!-- Hair top -->
+          <path d="M 775,138 C 780,122 790,117 800,117 C 810,117 820,122 825,138" fill="#6b3c0f"/>
+          <ellipse cx="785" cy="130" rx="11" ry="8" fill="#6b3c0f"/>
+          <ellipse cx="815" cy="130" rx="11" ry="8" fill="#6b3c0f"/>
+          <!-- Hair sheen/highlight -->
+          <path d="M 790,120 Q 800,117 810,120" stroke="rgba(255,255,255,0.1)" stroke-width="4" fill="none" stroke-linecap="round"/>
+          <path d="M 775,145 C 773,162 771,180 772,200" stroke="rgba(255,255,255,0.07)" stroke-width="6" fill="none" stroke-linecap="round"/>
+          <!-- Eyes (feminine, with lashes) -->
+          <ellipse cx="791" cy="149" rx="4.5" ry="3.8" fill="#fff"/>
+          <ellipse cx="809" cy="149" rx="4.5" ry="3.8" fill="#fff"/>
+          <circle cx="791" cy="150" r="2.4" fill="#44403c"/>
+          <circle cx="809" cy="150" r="2.4" fill="#44403c"/>
+          <circle cx="791.8" cy="149.2" r="0.8" fill="rgba(255,255,255,0.65)"/>
+          <circle cx="809.8" cy="149.2" r="0.8" fill="rgba(255,255,255,0.65)"/>
+          <!-- Lash lines -->
+          <path d="M 787,147 Q 791,144 795,146" stroke="#44403c" stroke-width="1.2" fill="none" stroke-linecap="round"/>
+          <path d="M 805,146 Q 809,144 813,147" stroke="#44403c" stroke-width="1.2" fill="none" stroke-linecap="round"/>
+          <!-- Gentle smile -->
+          <path d="M 792,161 Q 800,170 808,161" stroke="#d97706" stroke-width="2" fill="none" stroke-linecap="round"/>
+          <!-- Cheeks blush -->
+          <ellipse cx="784" cy="160" rx="6" ry="4" fill="rgba(249,115,22,0.12)"/>
+          <ellipse cx="816" cy="160" rx="6" ry="4" fill="rgba(249,115,22,0.12)"/>
+          <!-- Right arm — hand on glass -->
+          <path d="M 827,210 C 836,226 840,246 838,263" stroke="#fde68a" stroke-width="14" fill="none" stroke-linecap="round"/>
+          <circle cx="838" cy="262" r="9" fill="#fde68a"/>
+          <!-- Left arm — resting on counter -->
+          <path d="M 773,214 C 764,230 756,250 752,265" stroke="#fde68a" stroke-width="13" fill="none" stroke-linecap="round"/>
+          <circle cx="751" cy="264" r="8.5" fill="#fde68a"/>
+
+          <!-- ═══ 4TH FIGURE (partial, x≈970, right side peeking in) ═══ -->
+          <!-- Shows just head+shoulder of a 4th person on far right for depth -->
+          <path d="M 950,255 C 948,238 948,218 952,205 C 956,196 963,191 970,191 C 977,191 986,196 988,205 C 992,218 992,238 990,255 Z" fill="#7c3aed"/>
+          <rect x="965" y="178" width="11" height="16" rx="3" fill="#d97706"/>
+          <circle cx="970" cy="161" r="24" fill="#d97706"/>
+          <path d="M 948,158 C 948,138 958,132 970,132 C 982,132 992,138 992,158" fill="#1c1917"/>
+          <ellipse cx="959" cy="146" rx="8" ry="6" fill="#1c1917"/>
+          <ellipse cx="981" cy="146" rx="8" ry="6" fill="#1c1917"/>
+          <ellipse cx="963" cy="160" rx="3.8" ry="3.2" fill="#fff"/>
+          <ellipse cx="977" cy="160" rx="3.8" ry="3.2" fill="#fff"/>
+          <circle cx="963" cy="161" r="2" fill="#1c1917"/>
+          <circle cx="977" cy="161" r="2" fill="#1c1917"/>
+          <path d="M 963,170 Q 970,178 977,170" stroke="#1c1917" stroke-width="2" fill="none" stroke-linecap="round"/>
+          <!-- 4th person arm -->
+          <path d="M 988,215 C 995,230 998,248 996,264" stroke="#d97706" stroke-width="13" fill="none" stroke-linecap="round"/>
+          <circle cx="996" cy="263" r="8" fill="#d97706"/>
+
+          <!-- ── BAR COUNTER (drawn over lower body of people) ── -->
+          <!-- Counter top highlight strip -->
+          <rect x="0" y="263" width="1100" height="14" fill="url(#vs-ctr-top)"/>
+          <!-- Counter shine on top -->
+          <rect x="0" y="263" width="1100" height="3" fill="rgba(253,186,116,0.4)"/>
+          <!-- Counter face -->
+          <rect x="0" y="277" width="1100" height="60" fill="url(#vs-ctr-face)"/>
+          <!-- Counter panel dividers -->
+          <line x1="350" y1="277" x2="350" y2="337" stroke="rgba(120,53,15,0.45)" stroke-width="2"/>
+          <line x1="700" y1="277" x2="700" y2="337" stroke="rgba(120,53,15,0.45)" stroke-width="2"/>
+          <!-- Counter base -->
+          <rect x="0" y="333" width="1100" height="5" fill="rgba(28,25,23,0.35)"/>
+          <!-- Counter edge shadow -->
+          <rect x="0" y="338" width="1100" height="4" fill="rgba(28,25,23,0.12)"/>
+
+          <!-- ── BAR STOOLS ── -->
+          <!-- Stool 1 -->
+          <ellipse cx="200" cy="348" rx="30" ry="9" fill="url(#vs-stool)"/>
+          <ellipse cx="200" cy="344" rx="30" ry="9" fill="#ca8a04" opacity="0.6"/>
+          <line x1="182" y1="354" x2="176" y2="420" stroke="#6b3c0f" stroke-width="5" stroke-linecap="round"/>
+          <line x1="218" y1="354" x2="224" y2="420" stroke="#6b3c0f" stroke-width="5" stroke-linecap="round"/>
+          <line x1="178" y1="400" x2="222" y2="400" stroke="#78350f" stroke-width="4" stroke-linecap="round"/>
+          <!-- Stool 2 -->
+          <ellipse cx="500" cy="348" rx="30" ry="9" fill="url(#vs-stool)"/>
+          <ellipse cx="500" cy="344" rx="30" ry="9" fill="#ca8a04" opacity="0.6"/>
+          <line x1="482" y1="354" x2="476" y2="420" stroke="#6b3c0f" stroke-width="5" stroke-linecap="round"/>
+          <line x1="518" y1="354" x2="524" y2="420" stroke="#6b3c0f" stroke-width="5" stroke-linecap="round"/>
+          <line x1="478" y1="400" x2="522" y2="400" stroke="#78350f" stroke-width="4" stroke-linecap="round"/>
+          <!-- Stool 3 -->
+          <ellipse cx="800" cy="348" rx="30" ry="9" fill="url(#vs-stool)"/>
+          <ellipse cx="800" cy="344" rx="30" ry="9" fill="#ca8a04" opacity="0.6"/>
+          <line x1="782" y1="354" x2="776" y2="420" stroke="#6b3c0f" stroke-width="5" stroke-linecap="round"/>
+          <line x1="818" y1="354" x2="824" y2="420" stroke="#6b3c0f" stroke-width="5" stroke-linecap="round"/>
+          <line x1="778" y1="400" x2="822" y2="400" stroke="#78350f" stroke-width="4" stroke-linecap="round"/>
+          <!-- Stool 4 (partial) -->
+          <ellipse cx="970" cy="348" rx="26" ry="8" fill="url(#vs-stool)"/>
+          <ellipse cx="970" cy="344" rx="26" ry="8" fill="#ca8a04" opacity="0.5"/>
+          <line x1="954" y1="354" x2="950" y2="420" stroke="#6b3c0f" stroke-width="5" stroke-linecap="round"/>
+          <line x1="986" y1="354" x2="990" y2="420" stroke="#6b3c0f" stroke-width="5" stroke-linecap="round"/>
+
+          <!-- ── JUICE GLASSES ON COUNTER ── -->
+
+          <!-- Glass 1 — Berry pink (in front of P1) -->
+          <g>
+            <path d="M 180,182 L 220,182 L 215,263 L 185,263 Z" fill="rgba(255,255,255,0.05)" stroke="rgba(255,255,255,0.65)" stroke-width="1.5"/>
+            <rect x="177" y="188" width="50" height="78" fill="url(#vs-g1)" clip-path="url(#vs-gc1)"/>
+            <ellipse cx="200" cy="184" rx="21" ry="5" fill="rgba(255,255,255,0.72)"/>
+            <!-- foam top -->
+            <ellipse cx="200" cy="190" rx="17" ry="4" fill="rgba(255,255,255,0.5)"/>
+            <!-- Glass shine left -->
+            <path d="M 182,184 L 186,184 L 188,260 L 184,260 Z" fill="rgba(255,255,255,0.3)"/>
+            <!-- Condensation -->
+            <circle cx="178" cy="210" r="1.8" fill="rgba(255,255,255,0.4)"/>
+            <circle cx="177" cy="228" r="1.4" fill="rgba(255,255,255,0.35)"/>
+            <circle cx="178" cy="245" r="1.2" fill="rgba(255,255,255,0.3)"/>
+            <!-- Straw -->
+            <path d="M 217,172 L 213,264" stroke="#e11d48" stroke-width="4" stroke-linecap="round"/>
+            <path d="M 217,172 L 213,264" stroke="rgba(255,255,255,0.45)" stroke-width="1.8" stroke-dasharray="6,6" stroke-linecap="round"/>
+          </g>
+
+          <!-- Glass 2 — Citrus orange (in front of P2) -->
+          <g>
+            <path d="M 480,177 L 520,177 L 515,263 L 485,263 Z" fill="rgba(255,255,255,0.05)" stroke="rgba(255,255,255,0.65)" stroke-width="1.5"/>
+            <rect x="477" y="183" width="50" height="82" fill="url(#vs-g2)" clip-path="url(#vs-gc2)"/>
+            <ellipse cx="500" cy="179" rx="22" ry="5" fill="rgba(255,255,255,0.7)"/>
+            <!-- Orange pulp bits -->
+            <circle cx="492" cy="215" r="3" fill="rgba(253,186,116,0.55)"/>
+            <circle cx="506" cy="228" r="2.5" fill="rgba(253,186,116,0.5)"/>
+            <circle cx="496" cy="240" r="2.8" fill="rgba(253,186,116,0.45)"/>
+            <!-- Glass shine left -->
+            <path d="M 482,179 L 486,179 L 488,260 L 484,260 Z" fill="rgba(255,255,255,0.3)"/>
+            <!-- Condensation -->
+            <circle cx="478" cy="206" r="1.8" fill="rgba(255,255,255,0.4)"/>
+            <circle cx="477" cy="224" r="1.4" fill="rgba(255,255,255,0.35)"/>
+            <!-- Straw (white + orange stripe) -->
+            <path d="M 517,167 L 513,264" stroke="rgba(255,255,255,0.9)" stroke-width="4" stroke-linecap="round"/>
+            <path d="M 517,167 L 513,264" stroke="rgba(234,88,12,0.52)" stroke-width="1.8" stroke-dasharray="6,6" stroke-linecap="round"/>
+            <!-- Orange wheel on rim -->
+            <circle cx="518" cy="180" r="11" fill="#fed7aa" stroke="#f97316" stroke-width="1.2"/>
+            <circle cx="518" cy="180" r="7" fill="#fb923c" opacity="0.6"/>
+            <circle cx="518" cy="180" r="3" fill="#fde68a"/>
+            <line x1="518" y1="169" x2="518" y2="191" stroke="#ea580c" stroke-width="0.7" opacity="0.5"/>
+            <line x1="507" y1="180" x2="529" y2="180" stroke="#ea580c" stroke-width="0.7" opacity="0.5"/>
+          </g>
+
+          <!-- Glass 3 — Green power (in front of P3) -->
+          <g>
+            <path d="M 780,182 L 820,182 L 815,263 L 785,263 Z" fill="rgba(255,255,255,0.05)" stroke="rgba(255,255,255,0.65)" stroke-width="1.5"/>
+            <rect x="777" y="188" width="50" height="77" fill="url(#vs-g3)" clip-path="url(#vs-gc3)"/>
+            <ellipse cx="800" cy="184" rx="21" ry="5" fill="rgba(255,255,255,0.72)"/>
+            <!-- Foam top (smoothie) -->
+            <ellipse cx="800" cy="190" rx="17" ry="4" fill="rgba(255,255,255,0.5)"/>
+            <!-- Chia seed dots -->
+            <circle cx="790" cy="218" r="1.8" fill="rgba(28,25,23,0.32)"/>
+            <circle cx="802" cy="232" r="1.8" fill="rgba(28,25,23,0.28)"/>
+            <circle cx="810" cy="218" r="1.6" fill="rgba(28,25,23,0.28)"/>
+            <circle cx="793" cy="244" r="1.6" fill="rgba(28,25,23,0.25)"/>
+            <!-- Glass shine left -->
+            <path d="M 782,184 L 786,184 L 788,260 L 784,260 Z" fill="rgba(255,255,255,0.3)"/>
+            <!-- Condensation -->
+            <circle cx="778" cy="210" r="1.8" fill="rgba(255,255,255,0.4)"/>
+            <circle cx="777" cy="228" r="1.4" fill="rgba(255,255,255,0.35)"/>
+            <!-- Straw (green striped) -->
+            <path d="M 817,172 L 813,264" stroke="#15803d" stroke-width="4" stroke-linecap="round"/>
+            <path d="M 817,172 L 813,264" stroke="rgba(240,253,244,0.52)" stroke-width="1.8" stroke-dasharray="6,6" stroke-linecap="round"/>
+          </g>
+
+          <!-- Glass 4 — yellow shot/small glass (in front of P4) -->
+          <g>
+            <path d="M 950,190 L 986,190 L 982,263 L 954,263 Z" fill="rgba(255,255,255,0.05)" stroke="rgba(255,255,255,0.65)" stroke-width="1.5"/>
+            <rect x="948" y="195" width="42" height="70" fill="url(#vs-g4)" clip-path="url(#vs-gc4)"/>
+            <ellipse cx="968" cy="192" rx="19" ry="4.5" fill="rgba(255,255,255,0.68)"/>
+            <path d="M 952,192 L 955,192 L 956,260 L 953,260 Z" fill="rgba(255,255,255,0.28)"/>
+            <circle cx="948" cy="212" r="1.6" fill="rgba(255,255,255,0.38)"/>
+            <circle cx="947" cy="228" r="1.2" fill="rgba(255,255,255,0.32)"/>
+          </g>
+
+          <!-- ── COUNTER ITEMS ── -->
+          <!-- Coasters / small plates -->
+          <ellipse cx="300" cy="265" rx="22" ry="6" fill="rgba(180,83,9,0.35)" stroke="rgba(253,186,116,0.3)" stroke-width="1"/>
+          <ellipse cx="310" cy="263" rx="6" ry="4" fill="rgba(249,115,22,0.5)"/>
+          <ellipse cx="298" cy="261" rx="5" ry="3.5" fill="rgba(253,186,116,0.65)"/>
+          <ellipse cx="640" cy="265" rx="20" ry="5.5" fill="rgba(180,83,9,0.3)" stroke="rgba(253,186,116,0.25)" stroke-width="1"/>
+          <ellipse cx="648" cy="263" rx="5" ry="3.5" fill="rgba(34,197,94,0.55)"/>
+          <ellipse cx="636" cy="261" rx="4.5" ry="3" fill="rgba(253,186,116,0.6)"/>
+          <!-- Napkin/tissue roll right -->
+          <rect x="1056" y="252" width="28" height="14" rx="7" fill="rgba(255,255,255,0.55)" stroke="rgba(253,186,116,0.3)" stroke-width="1"/>
+
+          <!-- ── AMBIENT PARTICLES / BUBBLES ── -->
+          <circle cx="148" cy="200" r="3" fill="rgba(249,115,22,0.12)"/>
+          <circle cx="96" cy="160" r="5" fill="rgba(249,115,22,0.08)"/>
+          <circle cx="350" cy="140" r="4" fill="rgba(249,115,22,0.09)"/>
+          <circle cx="650" cy="180" r="3.5" fill="rgba(249,115,22,0.1)"/>
+          <circle cx="920" cy="155" r="4" fill="rgba(249,115,22,0.08)"/>
+          <circle cx="1050" cy="200" r="3" fill="rgba(249,115,22,0.1)"/>
+
+          <!-- ── TAGLINE at bottom ── -->
+          <text x="55" y="422" font-family="Georgia,serif" font-size="13" font-style="italic" fill="rgba(120,53,15,0.42)" letter-spacing="1">Every glass tells a story ·</text>
+          <text x="1045" y="422" text-anchor="end" font-family="Georgia,serif" font-size="13" font-style="italic" fill="rgba(120,53,15,0.42)">· what&#39;s yours?</text>
+        </svg>
       </div>
     </section>
 
