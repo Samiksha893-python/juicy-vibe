@@ -500,7 +500,7 @@
       font-size: 0.78rem;
       color: var(--muted);
       line-height: 1.5;
-      margin-bottom: 0.8rem;
+      margin-bottom: 0.45rem;
       font-style: italic;
     }
     .card-footer-row {
@@ -703,6 +703,41 @@
     }
     .social-btn:focus-visible { outline: 3px solid var(--citrus); outline-offset: 3px; }
 
+    /* ─── CARD FLAVOR & TAGS ────────────────────────── */
+    @keyframes rise {
+      0%   { transform: translateY(0) scale(1); opacity: 0.45; }
+      100% { transform: translateY(-72px) scale(0.6); opacity: 0; }
+    }
+    .bbl { animation: rise 2.8s ease-in infinite; }
+    .bbl-1 { animation-delay: 0s; }
+    .bbl-2 { animation-delay: 0.95s; }
+    .bbl-3 { animation-delay: 1.75s; }
+    .card-flavor {
+      font-size: 0.68rem;
+      font-weight: 600;
+      color: var(--citrus);
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      margin-bottom: 0.22rem;
+    }
+    .card-tags {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.3rem;
+      margin-bottom: 0.65rem;
+    }
+    .tag {
+      font-size: 0.62rem;
+      font-weight: 600;
+      padding: 0.18rem 0.52rem;
+      border-radius: 9999px;
+      background: var(--citrus-lt);
+      color: var(--citrus-dk);
+      letter-spacing: 0.04em;
+    }
+    .tag-green { background: var(--leaf-lt); color: var(--leaf); }
+    .tag-berry { background: var(--berry-lt); color: var(--berry); }
+
     /* ─── SCROLL REVEAL ──────────────────────────────── */
     [data-reveal] {
       opacity: 0;
@@ -886,8 +921,16 @@
                     <rect x="120" y="55" width="24" height="17" rx="3" fill="rgba(255,255,255,0.42)" transform="rotate(-8 132 63)"/>
                     <rect x="148" y="45" width="20" height="15" rx="3" fill="rgba(255,255,255,0.38)" transform="rotate(6 158 52)"/>
                     <rect x="134" y="70" width="22" height="15" rx="3" fill="rgba(255,255,255,0.32)" transform="rotate(-3 145 77)"/>
+                    <circle cx="131" cy="108" r="3" fill="rgba(255,255,255,0.45)" class="bbl bbl-1"/>
+                    <circle cx="153" cy="101" r="2.2" fill="rgba(255,255,255,0.38)" class="bbl bbl-2"/>
+                    <circle cx="168" cy="112" r="2.6" fill="rgba(255,255,255,0.42)" class="bbl bbl-3"/>
                   </g>
                   <polygon points="113,14 187,14 182,134 118,134" fill="rgba(255,255,255,0.06)" stroke="rgba(255,255,255,0.58)" stroke-width="1.5"/>
+                  <ellipse cx="150" cy="14" rx="38" ry="4.5" fill="rgba(255,255,255,0.32)" stroke="rgba(255,255,255,0.45)" stroke-width="0.8"/>
+                  <circle cx="104" cy="50" r="2.8" fill="rgba(255,255,255,0.55)"/>
+                  <circle cx="102" cy="68" r="2" fill="rgba(255,255,255,0.48)"/>
+                  <circle cx="105" cy="84" r="2.5" fill="rgba(255,255,255,0.5)"/>
+                  <circle cx="103" cy="100" r="1.8" fill="rgba(255,255,255,0.43)"/>
                   <polygon points="118,18 123,18 121,116 116,116" fill="rgba(255,255,255,0.22)"/>
                   <rect x="177" y="2" width="6" height="108" rx="3" fill="#fef9c3" transform="rotate(5 180 56)" opacity=".88"/>
                   <g transform="translate(204,22) rotate(-12)">
@@ -901,7 +944,12 @@
               </div>
               <div class="card-body">
                 <h3>Mango Gold</h3>
+                <p class="card-flavor">Sweet · Tropical · Spiced</p>
                 <p class="card-ingredients">Alphonso mango · fresh ginger · turmeric</p>
+                <div class="card-tags">
+                  <span class="tag">Cold-Pressed</span>
+                  <span class="tag tag-green">Vegan</span>
+                </div>
                 <div class="card-footer-row">
                   <span class="card-price">₹60</span>
                   <button class="card-order">Order</button>
@@ -924,8 +972,16 @@
                     <rect x="120" y="58" width="24" height="17" rx="3" fill="rgba(255,255,255,0.38)" transform="rotate(-8 132 66)"/>
                     <rect x="147" y="48" width="21" height="15" rx="3" fill="rgba(255,255,255,0.32)" transform="rotate(7 157 55)"/>
                     <rect x="132" y="74" width="22" height="14" rx="3" fill="rgba(255,255,255,0.28)" transform="rotate(-4 143 81)"/>
+                    <circle cx="133" cy="109" r="2.8" fill="rgba(255,255,255,0.45)" class="bbl bbl-1"/>
+                    <circle cx="155" cy="102" r="2" fill="rgba(255,255,255,0.38)" class="bbl bbl-2"/>
+                    <circle cx="169" cy="113" r="2.5" fill="rgba(255,255,255,0.42)" class="bbl bbl-3"/>
                   </g>
                   <polygon points="113,14 187,14 182,134 118,134" fill="rgba(255,255,255,0.06)" stroke="rgba(255,255,255,0.58)" stroke-width="1.5"/>
+                  <ellipse cx="150" cy="14" rx="38" ry="4.5" fill="rgba(255,255,255,0.32)" stroke="rgba(255,255,255,0.45)" stroke-width="0.8"/>
+                  <circle cx="104" cy="52" r="2.6" fill="rgba(255,255,255,0.55)"/>
+                  <circle cx="102" cy="70" r="1.9" fill="rgba(255,255,255,0.48)"/>
+                  <circle cx="105" cy="86" r="2.3" fill="rgba(255,255,255,0.5)"/>
+                  <circle cx="103" cy="102" r="1.7" fill="rgba(255,255,255,0.43)"/>
                   <polygon points="118,18 123,18 121,116 116,116" fill="rgba(255,255,255,0.22)"/>
                   <rect x="177" y="2" width="6" height="108" rx="3" fill="rgba(255,255,255,0.8)" transform="rotate(5 180 56)" opacity=".85"/>
                   <g transform="translate(80,22)">
@@ -940,7 +996,12 @@
               </div>
               <div class="card-body">
                 <h3>Citrus Sunrise</h3>
+                <p class="card-flavor">Tangy · Bright · Zesty</p>
                 <p class="card-ingredients">Orange · lemon · carrot · ginger</p>
+                <div class="card-tags">
+                  <span class="tag">Vitamin C</span>
+                  <span class="tag">No Sugar</span>
+                </div>
                 <div class="card-footer-row">
                   <span class="card-price">₹50</span>
                   <button class="card-order">Order</button>
@@ -963,8 +1024,16 @@
                     <ellipse cx="135" cy="56" rx="10" ry="5" fill="rgba(74,222,128,0.6)" transform="rotate(-20 135 56)"/>
                     <ellipse cx="155" cy="48" rx="9" ry="4.5" fill="rgba(74,222,128,0.55)" transform="rotate(15 155 48)"/>
                     <ellipse cx="143" cy="65" rx="8" ry="4" fill="rgba(74,222,128,0.5)" transform="rotate(-10 143 65)"/>
+                    <circle cx="132" cy="110" r="3" fill="rgba(255,255,255,0.45)" class="bbl bbl-1"/>
+                    <circle cx="154" cy="103" r="2.1" fill="rgba(255,255,255,0.38)" class="bbl bbl-2"/>
+                    <circle cx="170" cy="114" r="2.7" fill="rgba(255,255,255,0.42)" class="bbl bbl-3"/>
                   </g>
                   <polygon points="113,14 187,14 182,134 118,134" fill="rgba(255,255,255,0.06)" stroke="rgba(255,255,255,0.58)" stroke-width="1.5"/>
+                  <ellipse cx="150" cy="14" rx="38" ry="4.5" fill="rgba(255,255,255,0.32)" stroke="rgba(255,255,255,0.45)" stroke-width="0.8"/>
+                  <circle cx="104" cy="51" r="2.7" fill="rgba(255,255,255,0.55)"/>
+                  <circle cx="102" cy="69" r="1.9" fill="rgba(255,255,255,0.48)"/>
+                  <circle cx="105" cy="85" r="2.4" fill="rgba(255,255,255,0.5)"/>
+                  <circle cx="103" cy="101" r="1.7" fill="rgba(255,255,255,0.43)"/>
                   <polygon points="118,18 123,18 121,116 116,116" fill="rgba(255,255,255,0.22)"/>
                   <rect x="177" y="2" width="6" height="108" rx="3" fill="#fce7f3" transform="rotate(5 180 56)" opacity=".88"/>
                   <g transform="translate(75,110) rotate(15)">
@@ -979,7 +1048,12 @@
               </div>
               <div class="card-body">
                 <h3>Watermelon Cooler</h3>
+                <p class="card-flavor">Juicy · Fresh · Cooling</p>
                 <p class="card-ingredients">Watermelon · fresh mint · lime</p>
+                <div class="card-tags">
+                  <span class="tag">Hydrating</span>
+                  <span class="tag tag-green">Vegan</span>
+                </div>
                 <div class="card-footer-row">
                   <span class="card-price">₹45</span>
                   <button class="card-order">Order</button>
@@ -1009,8 +1083,16 @@
                     <rect x="120" y="55" width="24" height="17" rx="3" fill="rgba(255,255,255,0.42)" transform="rotate(-8 132 63)"/>
                     <rect x="148" y="45" width="20" height="15" rx="3" fill="rgba(255,255,255,0.38)" transform="rotate(6 158 52)"/>
                     <rect x="134" y="72" width="22" height="15" rx="3" fill="rgba(255,255,255,0.32)" transform="rotate(-3 145 79)"/>
+                    <circle cx="130" cy="110" r="3.2" fill="rgba(255,255,255,0.45)" class="bbl bbl-1"/>
+                    <circle cx="152" cy="102" r="2.2" fill="rgba(255,255,255,0.38)" class="bbl bbl-2"/>
+                    <circle cx="167" cy="113" r="2.7" fill="rgba(255,255,255,0.42)" class="bbl bbl-3"/>
                   </g>
                   <polygon points="113,14 187,14 182,134 118,134" fill="rgba(255,255,255,0.06)" stroke="rgba(255,255,255,0.58)" stroke-width="1.5"/>
+                  <ellipse cx="150" cy="14" rx="38" ry="4.5" fill="rgba(255,255,255,0.32)" stroke="rgba(255,255,255,0.45)" stroke-width="0.8"/>
+                  <circle cx="104" cy="50" r="2.8" fill="rgba(255,255,255,0.55)"/>
+                  <circle cx="102" cy="67" r="2" fill="rgba(255,255,255,0.48)"/>
+                  <circle cx="105" cy="83" r="2.5" fill="rgba(255,255,255,0.5)"/>
+                  <circle cx="103" cy="99" r="1.8" fill="rgba(255,255,255,0.43)"/>
                   <polygon points="118,18 123,18 121,116 116,116" fill="rgba(255,255,255,0.22)"/>
                   <rect x="177" y="2" width="6" height="108" rx="3" fill="#fef9c3" transform="rotate(5 180 56)" opacity=".88"/>
                   <g transform="translate(78,24)">
@@ -1026,7 +1108,12 @@
               </div>
               <div class="card-body">
                 <h3>Pineapple Bliss</h3>
+                <p class="card-flavor">Tropical · Sweet · Crisp</p>
                 <p class="card-ingredients">Pineapple · coconut water · fresh basil</p>
+                <div class="card-tags">
+                  <span class="tag">Coconut Water</span>
+                  <span class="tag tag-green">Vegan</span>
+                </div>
                 <div class="card-footer-row">
                   <span class="card-price">₹65</span>
                   <button class="card-order">Order</button>
@@ -1056,8 +1143,16 @@
                     <ellipse cx="150" cy="30" rx="36" ry="7" fill="rgba(255,255,255,0.78)"/>
                     <ellipse cx="138" cy="28" rx="9" ry="5" fill="rgba(255,255,255,0.65)"/>
                     <ellipse cx="163" cy="27" rx="8" ry="5" fill="rgba(255,255,255,0.6)"/>
+                    <circle cx="131" cy="110" r="3" fill="rgba(255,255,255,0.42)" class="bbl bbl-1"/>
+                    <circle cx="154" cy="104" r="2.2" fill="rgba(255,255,255,0.36)" class="bbl bbl-2"/>
+                    <circle cx="170" cy="115" r="2.6" fill="rgba(255,255,255,0.4)" class="bbl bbl-3"/>
                   </g>
                   <polygon points="113,14 187,14 182,134 118,134" fill="rgba(255,255,255,0.06)" stroke="rgba(255,255,255,0.58)" stroke-width="1.5"/>
+                  <ellipse cx="150" cy="14" rx="38" ry="4.5" fill="rgba(255,255,255,0.32)" stroke="rgba(255,255,255,0.45)" stroke-width="0.8"/>
+                  <circle cx="104" cy="52" r="2.7" fill="rgba(255,255,255,0.55)"/>
+                  <circle cx="102" cy="70" r="1.9" fill="rgba(255,255,255,0.48)"/>
+                  <circle cx="105" cy="86" r="2.4" fill="rgba(255,255,255,0.5)"/>
+                  <circle cx="103" cy="102" r="1.7" fill="rgba(255,255,255,0.43)"/>
                   <polygon points="118,18 123,18 121,116 116,116" fill="rgba(255,255,255,0.22)"/>
                   <rect x="177" y="2" width="6" height="108" rx="3" fill="#fce7f3" transform="rotate(5 180 56)" opacity=".88"/>
                   <g transform="translate(82,24)">
@@ -1074,7 +1169,12 @@
               </div>
               <div class="card-body">
                 <h3>Berry Dream</h3>
+                <p class="card-flavor">Rich · Creamy · Indulgent</p>
                 <p class="card-ingredients">Strawberry · banana · almond milk</p>
+                <div class="card-tags">
+                  <span class="tag tag-berry">High Protein</span>
+                  <span class="tag">Dairy-Free</span>
+                </div>
                 <div class="card-footer-row">
                   <span class="card-price">₹80</span>
                   <button class="card-order">Order</button>
@@ -1102,8 +1202,16 @@
                     <ellipse cx="145" cy="80" rx="2" ry="2.5" fill="rgba(28,25,23,0.3)" transform="rotate(10 145 80)"/>
                     <ellipse cx="162" cy="60" rx="2" ry="2.5" fill="rgba(28,25,23,0.3)" transform="rotate(25 162 60)"/>
                     <ellipse cx="138" cy="95" rx="2" ry="2.5" fill="rgba(28,25,23,0.25)" transform="rotate(-5 138 95)"/>
+                    <circle cx="133" cy="111" r="2.8" fill="rgba(255,255,255,0.4)" class="bbl bbl-1"/>
+                    <circle cx="155" cy="104" r="2" fill="rgba(255,255,255,0.34)" class="bbl bbl-2"/>
+                    <circle cx="169" cy="115" r="2.4" fill="rgba(255,255,255,0.38)" class="bbl bbl-3"/>
                   </g>
                   <polygon points="113,14 187,14 182,134 118,134" fill="rgba(255,255,255,0.06)" stroke="rgba(255,255,255,0.58)" stroke-width="1.5"/>
+                  <ellipse cx="150" cy="14" rx="38" ry="4.5" fill="rgba(255,255,255,0.32)" stroke="rgba(255,255,255,0.45)" stroke-width="0.8"/>
+                  <circle cx="104" cy="52" r="2.7" fill="rgba(255,255,255,0.52)"/>
+                  <circle cx="102" cy="70" r="1.9" fill="rgba(255,255,255,0.46)"/>
+                  <circle cx="105" cy="86" r="2.4" fill="rgba(255,255,255,0.48)"/>
+                  <circle cx="103" cy="102" r="1.7" fill="rgba(255,255,255,0.42)"/>
                   <polygon points="118,18 123,18 121,116 116,116" fill="rgba(255,255,255,0.22)"/>
                   <rect x="177" y="2" width="6" height="108" rx="3" fill="#dcfce7" transform="rotate(5 180 56)" opacity=".88"/>
                   <g transform="translate(76,26)">
@@ -1127,7 +1235,12 @@
               </div>
               <div class="card-body">
                 <h3>Green Power</h3>
+                <p class="card-flavor">Earthy · Clean · Potent</p>
                 <p class="card-ingredients">Spinach · kiwi · apple · chia seeds</p>
+                <div class="card-tags">
+                  <span class="tag tag-green">Superfood</span>
+                  <span class="tag tag-green">Alkalising</span>
+                </div>
                 <div class="card-footer-row">
                   <span class="card-price">₹75</span>
                   <button class="card-order">Order</button>
@@ -1152,8 +1265,16 @@
                     <ellipse cx="150" cy="30" rx="36" ry="7" fill="rgba(255,255,255,0.72)"/>
                     <ellipse cx="138" cy="28" rx="9" ry="5" fill="rgba(255,255,255,0.58)"/>
                     <ellipse cx="163" cy="27" rx="8" ry="5" fill="rgba(255,255,255,0.55)"/>
+                    <circle cx="132" cy="110" r="2.9" fill="rgba(255,255,255,0.43)" class="bbl bbl-1"/>
+                    <circle cx="155" cy="103" r="2.1" fill="rgba(255,255,255,0.37)" class="bbl bbl-2"/>
+                    <circle cx="170" cy="114" r="2.5" fill="rgba(255,255,255,0.4)" class="bbl bbl-3"/>
                   </g>
                   <polygon points="113,14 187,14 182,134 118,134" fill="rgba(255,255,255,0.06)" stroke="rgba(255,255,255,0.58)" stroke-width="1.5"/>
+                  <ellipse cx="150" cy="14" rx="38" ry="4.5" fill="rgba(255,255,255,0.32)" stroke="rgba(255,255,255,0.45)" stroke-width="0.8"/>
+                  <circle cx="104" cy="51" r="2.7" fill="rgba(255,255,255,0.53)"/>
+                  <circle cx="102" cy="69" r="1.9" fill="rgba(255,255,255,0.47)"/>
+                  <circle cx="105" cy="85" r="2.4" fill="rgba(255,255,255,0.49)"/>
+                  <circle cx="103" cy="101" r="1.7" fill="rgba(255,255,255,0.42)"/>
                   <polygon points="118,18 123,18 121,116 116,116" fill="rgba(255,255,255,0.22)"/>
                   <rect x="177" y="2" width="6" height="108" rx="3" fill="#fef9c3" transform="rotate(5 180 56)" opacity=".88"/>
                   <g transform="translate(80,22)">
@@ -1168,7 +1289,12 @@
               </div>
               <div class="card-body">
                 <h3>Tropical Storm</h3>
+                <p class="card-flavor">Layered · Exotic · Bold</p>
                 <p class="card-ingredients">Mango · pineapple · coconut · lime</p>
+                <div class="card-tags">
+                  <span class="tag">Multi-Fruit</span>
+                  <span class="tag tag-green">Vegan</span>
+                </div>
                 <div class="card-footer-row">
                   <span class="card-price">₹70</span>
                   <button class="card-order">Order</button>
@@ -1192,8 +1318,16 @@
                     <ellipse cx="138" cy="28" rx="10" ry="6" fill="rgba(255,255,255,0.72)"/>
                     <ellipse cx="164" cy="27" rx="9" ry="6" fill="rgba(255,255,255,0.68)"/>
                     <ellipse cx="150" cy="26" rx="6" ry="4" fill="rgba(255,255,255,0.9)"/>
+                    <circle cx="131" cy="110" r="3" fill="rgba(255,255,255,0.44)" class="bbl bbl-1"/>
+                    <circle cx="154" cy="103" r="2.1" fill="rgba(255,255,255,0.37)" class="bbl bbl-2"/>
+                    <circle cx="169" cy="114" r="2.6" fill="rgba(255,255,255,0.41)" class="bbl bbl-3"/>
                   </g>
                   <polygon points="113,14 187,14 182,134 118,134" fill="rgba(255,255,255,0.06)" stroke="rgba(255,255,255,0.58)" stroke-width="1.5"/>
+                  <ellipse cx="150" cy="14" rx="38" ry="4.5" fill="rgba(255,255,255,0.32)" stroke="rgba(255,255,255,0.45)" stroke-width="0.8"/>
+                  <circle cx="104" cy="51" r="2.7" fill="rgba(255,255,255,0.54)"/>
+                  <circle cx="102" cy="69" r="1.9" fill="rgba(255,255,255,0.47)"/>
+                  <circle cx="105" cy="85" r="2.4" fill="rgba(255,255,255,0.5)"/>
+                  <circle cx="103" cy="101" r="1.7" fill="rgba(255,255,255,0.43)"/>
                   <polygon points="118,18 123,18 121,116 116,116" fill="rgba(255,255,255,0.22)"/>
                   <rect x="177" y="2" width="6" height="108" rx="3" fill="#fff7ed" transform="rotate(5 180 56)" opacity=".88"/>
                   <g transform="translate(80,22)">
@@ -1205,7 +1339,12 @@
               </div>
               <div class="card-body">
                 <h3>Peach Velvet</h3>
+                <p class="card-flavor">Velvety · Gentle · Sweet</p>
                 <p class="card-ingredients">Peach · vanilla · oat milk</p>
+                <div class="card-tags">
+                  <span class="tag">Oat Milk</span>
+                  <span class="tag">Dairy-Free</span>
+                </div>
                 <div class="card-footer-row">
                   <span class="card-price">₹75</span>
                   <button class="card-order">Order</button>
@@ -1232,8 +1371,15 @@
                   <g clip-path="url(#im-c)">
                     <rect x="118" y="32" width="64" height="86" fill="url(#im-lq)"/>
                     <path d="M 122,65 Q 140,55 158,65 Q 176,75 178,62" stroke="rgba(239,68,68,0.4)" stroke-width="2" fill="none"/>
+                    <circle cx="132" cy="98" r="2.5" fill="rgba(255,255,255,0.45)" class="bbl bbl-1"/>
+                    <circle cx="150" cy="91" r="1.8" fill="rgba(255,255,255,0.38)" class="bbl bbl-2"/>
+                    <circle cx="165" cy="101" r="2.2" fill="rgba(255,255,255,0.42)" class="bbl bbl-3"/>
                   </g>
                   <polygon points="118,25 182,25 178,118 122,118" fill="rgba(255,255,255,0.06)" stroke="rgba(255,255,255,0.58)" stroke-width="1.5"/>
+                  <ellipse cx="150" cy="25" rx="32" ry="4" fill="rgba(255,255,255,0.32)" stroke="rgba(255,255,255,0.45)" stroke-width="0.8"/>
+                  <circle cx="108" cy="55" r="2.4" fill="rgba(255,255,255,0.55)"/>
+                  <circle cx="107" cy="72" r="1.7" fill="rgba(255,255,255,0.48)"/>
+                  <circle cx="109" cy="88" r="2.1" fill="rgba(255,255,255,0.5)"/>
                   <polygon points="123,29 128,29 126,110 121,110" fill="rgba(255,255,255,0.22)"/>
                   <g transform="translate(210,50)">
                     <path d="M0,0 L28,0 L14,-22 Z" fill="#fef08a" stroke="#ca8a04" stroke-width="1"/>
@@ -1247,7 +1393,12 @@
               </div>
               <div class="card-body">
                 <h3>Immunity Shot</h3>
+                <p class="card-flavor">Fiery · Zingy · Sharp</p>
                 <p class="card-ingredients">Ginger · lemon · cayenne · honey</p>
+                <div class="card-tags">
+                  <span class="tag">30ml Shot</span>
+                  <span class="tag">Immune Boost</span>
+                </div>
                 <div class="card-footer-row">
                   <span class="card-price">₹30</span>
                   <button class="card-order">Order</button>
@@ -1272,8 +1423,15 @@
                     <circle cx="163" cy="58" r="1.8" fill="rgba(28,25,23,0.35)"/>
                     <circle cx="140" cy="90" r="1.8" fill="rgba(28,25,23,0.3)"/>
                     <circle cx="158" cy="100" r="2" fill="rgba(28,25,23,0.4)"/>
+                    <circle cx="133" cy="99" r="2.4" fill="rgba(255,255,255,0.42)" class="bbl bbl-1"/>
+                    <circle cx="151" cy="92" r="1.7" fill="rgba(255,255,255,0.36)" class="bbl bbl-2"/>
+                    <circle cx="166" cy="102" r="2.1" fill="rgba(255,255,255,0.4)" class="bbl bbl-3"/>
                   </g>
                   <polygon points="118,25 182,25 178,118 122,118" fill="rgba(255,255,255,0.06)" stroke="rgba(255,255,255,0.58)" stroke-width="1.5"/>
+                  <ellipse cx="150" cy="25" rx="32" ry="4" fill="rgba(255,255,255,0.32)" stroke="rgba(255,255,255,0.45)" stroke-width="0.8"/>
+                  <circle cx="108" cy="56" r="2.3" fill="rgba(255,255,255,0.54)"/>
+                  <circle cx="107" cy="73" r="1.7" fill="rgba(255,255,255,0.47)"/>
+                  <circle cx="109" cy="89" r="2" fill="rgba(255,255,255,0.49)"/>
                   <polygon points="123,29 128,29 126,110 121,110" fill="rgba(255,255,255,0.22)"/>
                   <g transform="translate(215,62)" opacity=".85">
                     <ellipse cx="0" cy="0" rx="22" ry="9" fill="#f59e0b" transform="rotate(-20 0 0)"/>
@@ -1285,7 +1443,12 @@
               </div>
               <div class="card-body">
                 <h3>Glow Shot</h3>
+                <p class="card-flavor">Warm · Golden · Spiced</p>
                 <p class="card-ingredients">Turmeric · black pepper · honey · lemon</p>
+                <div class="card-tags">
+                  <span class="tag">30ml Shot</span>
+                  <span class="tag">Anti-Inflam.</span>
+                </div>
                 <div class="card-footer-row">
                   <span class="card-price">₹30</span>
                   <button class="card-order">Order</button>
@@ -1309,8 +1472,15 @@
                     <rect x="118" y="32" width="64" height="86" fill="url(#eb-lq)"/>
                     <path d="M 122,60 Q 140,48 158,60 Q 176,72 178,55" stroke="rgba(5,46,22,0.35)" stroke-width="2.5" fill="none"/>
                     <path d="M 122,82 Q 140,70 158,82" stroke="rgba(5,46,22,0.25)" stroke-width="2" fill="none"/>
+                    <circle cx="132" cy="100" r="2.5" fill="rgba(255,255,255,0.44)" class="bbl bbl-1"/>
+                    <circle cx="151" cy="93" r="1.8" fill="rgba(255,255,255,0.37)" class="bbl bbl-2"/>
+                    <circle cx="166" cy="103" r="2.2" fill="rgba(255,255,255,0.41)" class="bbl bbl-3"/>
                   </g>
                   <polygon points="118,25 182,25 178,118 122,118" fill="rgba(255,255,255,0.06)" stroke="rgba(255,255,255,0.58)" stroke-width="1.5"/>
+                  <ellipse cx="150" cy="25" rx="32" ry="4" fill="rgba(255,255,255,0.32)" stroke="rgba(255,255,255,0.45)" stroke-width="0.8"/>
+                  <circle cx="108" cy="55" r="2.3" fill="rgba(255,255,255,0.52)"/>
+                  <circle cx="107" cy="72" r="1.7" fill="rgba(255,255,255,0.46)"/>
+                  <circle cx="109" cy="88" r="2" fill="rgba(255,255,255,0.48)"/>
                   <polygon points="123,29 128,29 126,110 121,110" fill="rgba(255,255,255,0.22)"/>
                   <g transform="translate(208,18)">
                     <rect x="-6" y="0" width="4" height="55" rx="2" fill="#22c55e" transform="rotate(-12 -4 27)"/>
@@ -1323,7 +1493,12 @@
               </div>
               <div class="card-body">
                 <h3>Energy Boost</h3>
+                <p class="card-flavor">Green · Clean · Intense</p>
                 <p class="card-ingredients">Wheatgrass · spirulina · lemon · mint</p>
+                <div class="card-tags">
+                  <span class="tag tag-green">30ml Shot</span>
+                  <span class="tag tag-green">Alkalising</span>
+                </div>
                 <div class="card-footer-row">
                   <span class="card-price">₹35</span>
                   <button class="card-order">Order</button>
